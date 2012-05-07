@@ -130,8 +130,9 @@
 		0D32B2641558630B00598A14 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FFM;
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "JAMF Software";
+				ORGANIZATIONNAME = "John Sheets";
 			};
 			buildConfigurationList = 0D32B2671558630B00598A14 /* Build configuration list for PBXProject "FringeFM" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -278,6 +279,7 @@
 				0D32B2851558630D00598A14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
