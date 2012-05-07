@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D32B2721558630D00598A14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D32B2711558630D00598A14 /* Cocoa.framework */; };
+		0D32B27C1558630D00598A14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D32B27A1558630D00598A14 /* InfoPlist.strings */; };
+		0D32B2801558630D00598A14 /* FringeFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D32B27F1558630D00598A14 /* FringeFM.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D32B26E1558630D00598A14 /* FringeFM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FringeFM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D32B2711558630D00598A14 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0D32B2741558630D00598A14 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0D32B2751558630D00598A14 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0D32B2761558630D00598A14 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0D32B2791558630D00598A14 /* FringeFM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FringeFM-Info.plist"; sourceTree = "<group>"; };
+		0D32B27B1558630D00598A14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D32B27D1558630D00598A14 /* FringeFM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FringeFM-Prefix.pch"; sourceTree = "<group>"; };
+		0D32B27E1558630D00598A14 /* FringeFM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FringeFM.h; sourceTree = "<group>"; };
+		0D32B27F1558630D00598A14 /* FringeFM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FringeFM.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D32B26A1558630D00598A14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D32B2721558630D00598A14 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D32B2621558630A00598A14 = {
+			isa = PBXGroup;
+			children = (
+				0D32B2771558630D00598A14 /* FringeFM */,
+				0D32B2701558630D00598A14 /* Frameworks */,
+				0D32B26F1558630D00598A14 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D32B26F1558630D00598A14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D32B26E1558630D00598A14 /* FringeFM.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D32B2701558630D00598A14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D32B2711558630D00598A14 /* Cocoa.framework */,
+				0D32B2731558630D00598A14 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D32B2731558630D00598A14 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D32B2741558630D00598A14 /* AppKit.framework */,
+				0D32B2751558630D00598A14 /* CoreData.framework */,
+				0D32B2761558630D00598A14 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0D32B2771558630D00598A14 /* FringeFM */ = {
+			isa = PBXGroup;
+			children = (
+				0D32B27E1558630D00598A14 /* FringeFM.h */,
+				0D32B27F1558630D00598A14 /* FringeFM.m */,
+				0D32B2781558630D00598A14 /* Supporting Files */,
+			);
+			path = FringeFM;
+			sourceTree = "<group>";
+		};
+		0D32B2781558630D00598A14 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D32B2791558630D00598A14 /* FringeFM-Info.plist */,
+				0D32B27A1558630D00598A14 /* InfoPlist.strings */,
+				0D32B27D1558630D00598A14 /* FringeFM-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0D32B26B1558630D00598A14 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0D32B26D1558630D00598A14 /* FringeFM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D32B2831558630D00598A14 /* Build configuration list for PBXNativeTarget "FringeFM" */;
+			buildPhases = (
+				0D32B2691558630D00598A14 /* Sources */,
+				0D32B26A1558630D00598A14 /* Frameworks */,
+				0D32B26B1558630D00598A14 /* Headers */,
+				0D32B26C1558630D00598A14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FringeFM;
+			productName = FringeFM;
+			productReference = 0D32B26E1558630D00598A14 /* FringeFM.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D32B2641558630B00598A14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "JAMF Software";
+			};
+			buildConfigurationList = 0D32B2671558630B00598A14 /* Build configuration list for PBXProject "FringeFM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0D32B2621558630A00598A14;
+			productRefGroup = 0D32B26F1558630D00598A14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D32B26D1558630D00598A14 /* FringeFM */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D32B26C1558630D00598A14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D32B27C1558630D00598A14 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D32B2691558630D00598A14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D32B2801558630D00598A14 /* FringeFM.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0D32B27A1558630D00598A14 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D32B27B1558630D00598A14 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D32B2811558630D00598A14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0D32B2821558630D00598A14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0D32B2841558630D00598A14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FringeFM/FringeFM-Prefix.pch";
+				INFOPLIST_FILE = "FringeFM/FringeFM-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		0D32B2851558630D00598A14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FringeFM/FringeFM-Prefix.pch";
+				INFOPLIST_FILE = "FringeFM/FringeFM-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D32B2671558630B00598A14 /* Build configuration list for PBXProject "FringeFM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D32B2811558630D00598A14 /* Debug */,
+				0D32B2821558630D00598A14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D32B2831558630D00598A14 /* Build configuration list for PBXNativeTarget "FringeFM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D32B2841558630D00598A14 /* Debug */,
+				0D32B2851558630D00598A14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D32B2641558630B00598A14 /* Project object */;
+}
