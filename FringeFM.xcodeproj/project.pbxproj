@@ -10,6 +10,16 @@
 		0D32B2721558630D00598A14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D32B2711558630D00598A14 /* Cocoa.framework */; };
 		0D32B27C1558630D00598A14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D32B27A1558630D00598A14 /* InfoPlist.strings */; };
 		0D32B2801558630D00598A14 /* FringeFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D32B27F1558630D00598A14 /* FringeFM.m */; };
+		0D7E2B1415589C3F00C1EA0C /* FMJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1015589C3F00C1EA0C /* FMJson.h */; };
+		0D7E2B1615589C3F00C1EA0C /* FMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1115589C3F00C1EA0C /* FMJson.m */; };
+		0D7E2B1815589C3F00C1EA0C /* NowPlaying.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */; };
+		0D7E2B1A15589C3F00C1EA0C /* NowPlaying.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1315589C3F00C1EA0C /* NowPlaying.m */; };
+		0D7E2B2215589D4100C1EA0C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D32B2711558630D00598A14 /* Cocoa.framework */; };
+		0D7E2B2815589D4100C1EA0C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D7E2B2615589D4100C1EA0C /* InfoPlist.strings */; };
+		0D7E2B3015589D6D00C1EA0C /* FMJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1015589C3F00C1EA0C /* FMJson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D7E2B3115589D6D00C1EA0C /* FMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1115589C3F00C1EA0C /* FMJson.m */; };
+		0D7E2B3215589D6D00C1EA0C /* NowPlaying.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D7E2B3315589D6D00C1EA0C /* NowPlaying.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1315589C3F00C1EA0C /* NowPlaying.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +33,26 @@
 		0D32B27D1558630D00598A14 /* FringeFM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FringeFM-Prefix.pch"; sourceTree = "<group>"; };
 		0D32B27E1558630D00598A14 /* FringeFM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FringeFM.h; sourceTree = "<group>"; };
 		0D32B27F1558630D00598A14 /* FringeFM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FringeFM.m; sourceTree = "<group>"; };
+		0D7E2B1015589C3F00C1EA0C /* FMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMJson.h; sourceTree = "<group>"; };
+		0D7E2B1115589C3F00C1EA0C /* FMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMJson.m; sourceTree = "<group>"; };
+		0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlaying.h; sourceTree = "<group>"; };
+		0D7E2B1315589C3F00C1EA0C /* NowPlaying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowPlaying.m; sourceTree = "<group>"; };
+		0D7E2B2115589D4100C1EA0C /* Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D7E2B2515589D4100C1EA0C /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
+		0D7E2B2715589D4100C1EA0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0D7E2B2915589D4100C1EA0C /* Specs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
+		0D8342FC1558A39100442C1A /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
+		0D8342FD1558A39100442C1A /* getrecenttracks-playing-formatted.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "getrecenttracks-playing-formatted.json"; sourceTree = "<group>"; };
+		0D8342FE1558A39100442C1A /* getrecenttracks-playing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "getrecenttracks-playing.json"; sourceTree = "<group>"; };
+		0D8342FF1558A39100442C1A /* getrecenttracks-quiet-formatted.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "getrecenttracks-quiet-formatted.json"; sourceTree = "<group>"; };
+		0D8343001558A39100442C1A /* getrecenttracks-quiet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "getrecenttracks-quiet.json"; sourceTree = "<group>"; };
+		0D8343071558A3A000442C1A /* fm_json.feature */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fm_json.feature; sourceTree = "<group>"; };
+		0D8343081558A3A000442C1A /* now_playing.feature */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = now_playing.feature; sourceTree = "<group>"; };
+		0D83430A1558A3A000442C1A /* json_step.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = json_step.rb; sourceTree = "<group>"; };
+		0D83430B1558A3A000442C1A /* now_playing_step.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = now_playing_step.rb; sourceTree = "<group>"; };
+		0D83430D1558A3A000442C1A /* env.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = env.rb; sourceTree = "<group>"; };
+		0D83430E1558A3A000442C1A /* tables.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = tables.rb; sourceTree = "<group>"; };
+		0D8343151558A3AB00442C1A /* spec_helper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = spec_helper.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +64,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0D7E2B1D15589D4100C1EA0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D7E2B2215589D4100C1EA0C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -41,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				0D32B2771558630D00598A14 /* FringeFM */,
+				0D7E2B2315589D4100C1EA0C /* Specs */,
 				0D32B2701558630D00598A14 /* Frameworks */,
 				0D32B26F1558630D00598A14 /* Products */,
 			);
@@ -50,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0D32B26E1558630D00598A14 /* FringeFM.framework */,
+				0D7E2B2115589D4100C1EA0C /* Specs.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +116,10 @@
 		0D32B2771558630D00598A14 /* FringeFM */ = {
 			isa = PBXGroup;
 			children = (
+				0D7E2B1015589C3F00C1EA0C /* FMJson.h */,
+				0D7E2B1115589C3F00C1EA0C /* FMJson.m */,
+				0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */,
+				0D7E2B1315589C3F00C1EA0C /* NowPlaying.m */,
 				0D32B27E1558630D00598A14 /* FringeFM.h */,
 				0D32B27F1558630D00598A14 /* FringeFM.m */,
 				0D32B2781558630D00598A14 /* Supporting Files */,
@@ -93,6 +137,68 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0D7E2B2315589D4100C1EA0C /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				0D8343151558A3AB00442C1A /* spec_helper.rb */,
+				0D8343061558A3A000442C1A /* features */,
+				0D8342FB1558A39100442C1A /* data */,
+				0D7E2B2415589D4100C1EA0C /* Supporting Files */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		0D7E2B2415589D4100C1EA0C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0D7E2B2515589D4100C1EA0C /* Specs-Info.plist */,
+				0D7E2B2615589D4100C1EA0C /* InfoPlist.strings */,
+				0D7E2B2915589D4100C1EA0C /* Specs-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D8342FB1558A39100442C1A /* data */ = {
+			isa = PBXGroup;
+			children = (
+				0D8342FC1558A39100442C1A /* error.json */,
+				0D8342FD1558A39100442C1A /* getrecenttracks-playing-formatted.json */,
+				0D8342FE1558A39100442C1A /* getrecenttracks-playing.json */,
+				0D8342FF1558A39100442C1A /* getrecenttracks-quiet-formatted.json */,
+				0D8343001558A39100442C1A /* getrecenttracks-quiet.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		0D8343061558A3A000442C1A /* features */ = {
+			isa = PBXGroup;
+			children = (
+				0D8343071558A3A000442C1A /* fm_json.feature */,
+				0D8343081558A3A000442C1A /* now_playing.feature */,
+				0D8343091558A3A000442C1A /* step_definitions */,
+				0D83430C1558A3A000442C1A /* support */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		0D8343091558A3A000442C1A /* step_definitions */ = {
+			isa = PBXGroup;
+			children = (
+				0D83430A1558A3A000442C1A /* json_step.rb */,
+				0D83430B1558A3A000442C1A /* now_playing_step.rb */,
+			);
+			path = step_definitions;
+			sourceTree = "<group>";
+		};
+		0D83430C1558A3A000442C1A /* support */ = {
+			isa = PBXGroup;
+			children = (
+				0D83430D1558A3A000442C1A /* env.rb */,
+				0D83430E1558A3A000442C1A /* tables.rb */,
+			);
+			path = support;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -100,6 +206,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D7E2B1415589C3F00C1EA0C /* FMJson.h in Headers */,
+				0D7E2B1815589C3F00C1EA0C /* NowPlaying.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D7E2B1E15589D4100C1EA0C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D7E2B3015589D6D00C1EA0C /* FMJson.h in Headers */,
+				0D7E2B3215589D6D00C1EA0C /* NowPlaying.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +239,24 @@
 			name = FringeFM;
 			productName = FringeFM;
 			productReference = 0D32B26E1558630D00598A14 /* FringeFM.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0D7E2B2015589D4100C1EA0C /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D7E2B2D15589D4100C1EA0C /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				0D7E2B1C15589D4100C1EA0C /* Sources */,
+				0D7E2B1D15589D4100C1EA0C /* Frameworks */,
+				0D7E2B1E15589D4100C1EA0C /* Headers */,
+				0D7E2B1F15589D4100C1EA0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = 0D7E2B2115589D4100C1EA0C /* Specs.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -147,6 +282,7 @@
 			projectRoot = "";
 			targets = (
 				0D32B26D1558630D00598A14 /* FringeFM */,
+				0D7E2B2015589D4100C1EA0C /* Specs */,
 			);
 		};
 /* End PBXProject section */
@@ -160,6 +296,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0D7E2B1F15589D4100C1EA0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D7E2B2815589D4100C1EA0C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -168,6 +312,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D32B2801558630D00598A14 /* FringeFM.m in Sources */,
+				0D7E2B1615589C3F00C1EA0C /* FMJson.m in Sources */,
+				0D7E2B1A15589C3F00C1EA0C /* NowPlaying.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D7E2B1C15589D4100C1EA0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D7E2B3115589D6D00C1EA0C /* FMJson.m in Sources */,
+				0D7E2B3315589D6D00C1EA0C /* NowPlaying.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +333,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				0D32B27B1558630D00598A14 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0D7E2B2615589D4100C1EA0C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D7E2B2715589D4100C1EA0C /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -260,6 +423,38 @@
 			};
 			name = Release;
 		};
+		0D7E2B2E15589D4100C1EA0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		0D7E2B2F15589D4100C1EA0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -277,6 +472,15 @@
 			buildConfigurations = (
 				0D32B2841558630D00598A14 /* Debug */,
 				0D32B2851558630D00598A14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D7E2B2D15589D4100C1EA0C /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D7E2B2E15589D4100C1EA0C /* Debug */,
+				0D7E2B2F15589D4100C1EA0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
