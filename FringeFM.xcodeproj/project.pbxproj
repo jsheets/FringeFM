@@ -426,11 +426,9 @@
 		0D7E2B2E15589D4100C1EA0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
@@ -442,11 +440,9 @@
 		0D7E2B2F15589D4100C1EA0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
