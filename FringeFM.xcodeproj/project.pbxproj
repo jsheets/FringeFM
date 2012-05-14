@@ -59,6 +59,10 @@
 		0DA9F8B915613FE100A110A9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA9F8B715613FD500A110A9 /* libz.dylib */; };
 		0DA9F8BB1561400F00A110A9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA9F8BA1561400F00A110A9 /* SystemConfiguration.framework */; };
 		0DA9F8BC1561401500A110A9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA9F8BA1561400F00A110A9 /* SystemConfiguration.framework */; };
+		0DA9F8BF1561417500A110A9 /* FFMLastFMUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F8BD1561417500A110A9 /* FFMLastFMUpdater.h */; };
+		0DA9F8C01561417500A110A9 /* FFMLastFMUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F8BD1561417500A110A9 /* FFMLastFMUpdater.h */; };
+		0DA9F8C11561417500A110A9 /* FFMLastFMUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F8BE1561417500A110A9 /* FFMLastFMUpdater.m */; };
+		0DA9F8C21561417500A110A9 /* FFMLastFMUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F8BE1561417500A110A9 /* FFMLastFMUpdater.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +114,8 @@
 		0DA9F88E15613F1600A110A9 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "External/asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = "<group>"; };
 		0DA9F8B715613FD500A110A9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0DA9F8BA1561400F00A110A9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0DA9F8BD1561417500A110A9 /* FFMLastFMUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMLastFMUpdater.h; sourceTree = "<group>"; };
+		0DA9F8BE1561417500A110A9 /* FFMLastFMUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMLastFMUpdater.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,8 @@
 				0D7E2B1115589C3F00C1EA0C /* FFMJson.m */,
 				0D7E2B1215589C3F00C1EA0C /* FFMLastFmJson.h */,
 				0D7E2B1315589C3F00C1EA0C /* FFMLastFmJson.m */,
+				0DA9F8BD1561417500A110A9 /* FFMLastFMUpdater.h */,
+				0DA9F8BE1561417500A110A9 /* FFMLastFMUpdater.m */,
 				0D32B2781558630D00598A14 /* Supporting Files */,
 			);
 			path = FringeFM;
@@ -306,6 +314,7 @@
 				0DA9F8AD15613F1600A110A9 /* ASIInputStream.h in Headers */,
 				0DA9F8B115613F1600A110A9 /* ASINetworkQueue.h in Headers */,
 				0DA9F8B515613F1600A110A9 /* ASIProgressDelegate.h in Headers */,
+				0DA9F8BF1561417500A110A9 /* FFMLastFMUpdater.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +335,7 @@
 				0DA9F8AE15613F1600A110A9 /* ASIInputStream.h in Headers */,
 				0DA9F8B215613F1600A110A9 /* ASINetworkQueue.h in Headers */,
 				0DA9F8B615613F1600A110A9 /* ASIProgressDelegate.h in Headers */,
+				0DA9F8C01561417500A110A9 /* FFMLastFMUpdater.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +439,7 @@
 				0DA9F8A715613F1600A110A9 /* ASIHTTPRequest.m in Sources */,
 				0DA9F8AF15613F1600A110A9 /* ASIInputStream.m in Sources */,
 				0DA9F8B315613F1600A110A9 /* ASINetworkQueue.m in Sources */,
+				0DA9F8C11561417500A110A9 /* FFMLastFMUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +456,7 @@
 				0DA9F8A815613F1600A110A9 /* ASIHTTPRequest.m in Sources */,
 				0DA9F8B015613F1600A110A9 /* ASIInputStream.m in Sources */,
 				0DA9F8B415613F1600A110A9 /* ASINetworkQueue.m in Sources */,
+				0DA9F8C21561417500A110A9 /* FFMLastFMUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
