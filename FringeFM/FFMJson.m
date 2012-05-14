@@ -25,9 +25,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FMJson.h"
+#import "FFMJson.h"
 
-@implementation FMJson
+@implementation FFMJson
 
 @synthesize jsonText = _jsonText;
 @synthesize jsonObject = _jsonObject;

@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		0D32B2721558630D00598A14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D32B2711558630D00598A14 /* Cocoa.framework */; };
 		0D32B27C1558630D00598A14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D32B27A1558630D00598A14 /* InfoPlist.strings */; };
-		0D7E2B1415589C3F00C1EA0C /* FMJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1015589C3F00C1EA0C /* FMJson.h */; };
-		0D7E2B1615589C3F00C1EA0C /* FMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1115589C3F00C1EA0C /* FMJson.m */; };
-		0D7E2B1815589C3F00C1EA0C /* NowPlaying.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */; };
-		0D7E2B1A15589C3F00C1EA0C /* NowPlaying.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1315589C3F00C1EA0C /* NowPlaying.m */; };
+		0D7E2B1415589C3F00C1EA0C /* FFMJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1015589C3F00C1EA0C /* FFMJson.h */; };
+		0D7E2B1615589C3F00C1EA0C /* FFMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1115589C3F00C1EA0C /* FFMJson.m */; };
+		0D7E2B1815589C3F00C1EA0C /* FFMLastFmJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1215589C3F00C1EA0C /* FFMLastFmJson.h */; };
+		0D7E2B1A15589C3F00C1EA0C /* FFMLastFmJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1315589C3F00C1EA0C /* FFMLastFmJson.m */; };
 		0D7E2B2215589D4100C1EA0C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D32B2711558630D00598A14 /* Cocoa.framework */; };
 		0D7E2B2815589D4100C1EA0C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D7E2B2615589D4100C1EA0C /* InfoPlist.strings */; };
-		0D7E2B3015589D6D00C1EA0C /* FMJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1015589C3F00C1EA0C /* FMJson.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D7E2B3115589D6D00C1EA0C /* FMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1115589C3F00C1EA0C /* FMJson.m */; };
-		0D7E2B3215589D6D00C1EA0C /* NowPlaying.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D7E2B3315589D6D00C1EA0C /* NowPlaying.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1315589C3F00C1EA0C /* NowPlaying.m */; };
+		0D7E2B3015589D6D00C1EA0C /* FFMJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1015589C3F00C1EA0C /* FFMJson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D7E2B3115589D6D00C1EA0C /* FFMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1115589C3F00C1EA0C /* FFMJson.m */; };
+		0D7E2B3215589D6D00C1EA0C /* FFMLastFmJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1215589C3F00C1EA0C /* FFMLastFmJson.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D7E2B3315589D6D00C1EA0C /* FFMLastFmJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1315589C3F00C1EA0C /* FFMLastFmJson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +30,10 @@
 		0D32B2791558630D00598A14 /* FringeFM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FringeFM-Info.plist"; sourceTree = "<group>"; };
 		0D32B27B1558630D00598A14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D32B27D1558630D00598A14 /* FringeFM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FringeFM-Prefix.pch"; sourceTree = "<group>"; };
-		0D7E2B1015589C3F00C1EA0C /* FMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMJson.h; sourceTree = "<group>"; };
-		0D7E2B1115589C3F00C1EA0C /* FMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMJson.m; sourceTree = "<group>"; };
-		0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlaying.h; sourceTree = "<group>"; };
-		0D7E2B1315589C3F00C1EA0C /* NowPlaying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NowPlaying.m; sourceTree = "<group>"; };
+		0D7E2B1015589C3F00C1EA0C /* FFMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMJson.h; sourceTree = "<group>"; };
+		0D7E2B1115589C3F00C1EA0C /* FFMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMJson.m; sourceTree = "<group>"; };
+		0D7E2B1215589C3F00C1EA0C /* FFMLastFmJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMLastFmJson.h; sourceTree = "<group>"; };
+		0D7E2B1315589C3F00C1EA0C /* FFMLastFmJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMLastFmJson.m; sourceTree = "<group>"; };
 		0D7E2B2115589D4100C1EA0C /* Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D7E2B2515589D4100C1EA0C /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		0D7E2B2715589D4100C1EA0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -113,10 +113,10 @@
 		0D32B2771558630D00598A14 /* FringeFM */ = {
 			isa = PBXGroup;
 			children = (
-				0D7E2B1015589C3F00C1EA0C /* FMJson.h */,
-				0D7E2B1115589C3F00C1EA0C /* FMJson.m */,
-				0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */,
-				0D7E2B1315589C3F00C1EA0C /* NowPlaying.m */,
+				0D7E2B1015589C3F00C1EA0C /* FFMJson.h */,
+				0D7E2B1115589C3F00C1EA0C /* FFMJson.m */,
+				0D7E2B1215589C3F00C1EA0C /* FFMLastFmJson.h */,
+				0D7E2B1315589C3F00C1EA0C /* FFMLastFmJson.m */,
 				0D32B2781558630D00598A14 /* Supporting Files */,
 			);
 			path = FringeFM;
@@ -201,8 +201,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D7E2B1415589C3F00C1EA0C /* FMJson.h in Headers */,
-				0D7E2B1815589C3F00C1EA0C /* NowPlaying.h in Headers */,
+				0D7E2B1415589C3F00C1EA0C /* FFMJson.h in Headers */,
+				0D7E2B1815589C3F00C1EA0C /* FFMLastFmJson.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +210,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D7E2B3015589D6D00C1EA0C /* FMJson.h in Headers */,
-				0D7E2B3215589D6D00C1EA0C /* NowPlaying.h in Headers */,
+				0D7E2B3015589D6D00C1EA0C /* FFMJson.h in Headers */,
+				0D7E2B3215589D6D00C1EA0C /* FFMLastFmJson.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,8 +306,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D7E2B1615589C3F00C1EA0C /* FMJson.m in Sources */,
-				0D7E2B1A15589C3F00C1EA0C /* NowPlaying.m in Sources */,
+				0D7E2B1615589C3F00C1EA0C /* FFMJson.m in Sources */,
+				0D7E2B1A15589C3F00C1EA0C /* FFMLastFmJson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,8 +315,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D7E2B3115589D6D00C1EA0C /* FMJson.m in Sources */,
-				0D7E2B3315589D6D00C1EA0C /* NowPlaying.m in Sources */,
+				0D7E2B3115589D6D00C1EA0C /* FFMJson.m in Sources */,
+				0D7E2B3315589D6D00C1EA0C /* FFMLastFmJson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

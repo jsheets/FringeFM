@@ -27,7 +27,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FMJson : NSObject
+@interface FFMJson : NSObject
 
 @property (strong) NSString *jsonText;
 @property (strong) id jsonObject;

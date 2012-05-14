@@ -25,9 +25,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "NowPlaying.h"
+#import "FFMLastFmJson.h"
 
-@implementation NowPlaying
+@implementation FFMLastFmJson
 
 @synthesize isPlaying = _isPlaying;
 @synthesize artist = _artist;

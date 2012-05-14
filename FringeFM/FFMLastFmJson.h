@@ -26,9 +26,9 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "FMJson.h"
+#import "FFMJson.h"
 
-@interface NowPlaying : FMJson
+@interface FFMLastFmJson : FFMJson
 
 @property (assign) BOOL isPlaying;
 
