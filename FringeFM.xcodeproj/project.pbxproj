@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0D32B2721558630D00598A14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D32B2711558630D00598A14 /* Cocoa.framework */; };
 		0D32B27C1558630D00598A14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D32B27A1558630D00598A14 /* InfoPlist.strings */; };
-		0D32B2801558630D00598A14 /* FringeFM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D32B27F1558630D00598A14 /* FringeFM.m */; };
 		0D7E2B1415589C3F00C1EA0C /* FMJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1015589C3F00C1EA0C /* FMJson.h */; };
 		0D7E2B1615589C3F00C1EA0C /* FMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1115589C3F00C1EA0C /* FMJson.m */; };
 		0D7E2B1815589C3F00C1EA0C /* NowPlaying.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */; };
@@ -31,8 +30,6 @@
 		0D32B2791558630D00598A14 /* FringeFM-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FringeFM-Info.plist"; sourceTree = "<group>"; };
 		0D32B27B1558630D00598A14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D32B27D1558630D00598A14 /* FringeFM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FringeFM-Prefix.pch"; sourceTree = "<group>"; };
-		0D32B27E1558630D00598A14 /* FringeFM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FringeFM.h; sourceTree = "<group>"; };
-		0D32B27F1558630D00598A14 /* FringeFM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FringeFM.m; sourceTree = "<group>"; };
 		0D7E2B1015589C3F00C1EA0C /* FMJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMJson.h; sourceTree = "<group>"; };
 		0D7E2B1115589C3F00C1EA0C /* FMJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMJson.m; sourceTree = "<group>"; };
 		0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NowPlaying.h; sourceTree = "<group>"; };
@@ -120,8 +117,6 @@
 				0D7E2B1115589C3F00C1EA0C /* FMJson.m */,
 				0D7E2B1215589C3F00C1EA0C /* NowPlaying.h */,
 				0D7E2B1315589C3F00C1EA0C /* NowPlaying.m */,
-				0D32B27E1558630D00598A14 /* FringeFM.h */,
-				0D32B27F1558630D00598A14 /* FringeFM.m */,
 				0D32B2781558630D00598A14 /* Supporting Files */,
 			);
 			path = FringeFM;
@@ -311,7 +306,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D32B2801558630D00598A14 /* FringeFM.m in Sources */,
 				0D7E2B1615589C3F00C1EA0C /* FMJson.m in Sources */,
 				0D7E2B1A15589C3F00C1EA0C /* NowPlaying.m in Sources */,
 			);
