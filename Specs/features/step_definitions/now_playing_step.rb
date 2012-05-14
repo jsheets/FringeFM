@@ -1,5 +1,5 @@
 When /^I parse the Now Playing JSON$/ do
-  @now_playing = NowPlaying.alloc.initWithJson(@json)
+  @now_playing = FFMLastFmJson.alloc.initWithJson(@json)
   @now_playing.jsonText.should == @json
   #@now_playing.jsonText.to_s.should match(/Spock's Beard/), "JSON sanity check"
 end

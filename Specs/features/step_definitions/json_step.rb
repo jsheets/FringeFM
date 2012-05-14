@@ -14,7 +14,7 @@ Given /^a JSON data string with an error message$/ do
 end
 
 When /^I parse the JSON$/ do
-  @fm_json = FMJson.alloc.initWithJson(@json)
+  @fm_json = FFMJson.alloc.initWithJson(@json)
 end
 
 Then /^I should find the JSON property "([^"]*)"$/ do |property_name|
