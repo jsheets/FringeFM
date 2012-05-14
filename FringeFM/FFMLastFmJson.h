@@ -28,6 +28,9 @@
 #import <Foundation/Foundation.h>
 #import "FFMJson.h"
 
+/**
+ * Friendly wrapper around last.fm JSON for API call user.getrecenttracks.
+ */
 @interface FFMLastFmJson : FFMJson
 
 @property (assign) BOOL isPlaying;

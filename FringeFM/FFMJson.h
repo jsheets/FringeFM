@@ -27,6 +27,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * XPath-ish wrapper around JSON data. Loads via NSJSONSerialization.
+ */
 @interface FFMJson : NSObject
 
 @property (strong) NSString *jsonText;
