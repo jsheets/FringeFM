@@ -36,6 +36,57 @@
 @synthesize artSmallUrl = _artSmallUrl;
 @synthesize error = _error;
 
+// Sample JSON:
+//
+// {
+//   "recenttracks": {
+//     "@attr": {
+//       "page": "1", 
+//       "perPage": "1", 
+//       "total": "41450", 
+//       "totalPages": "20725", 
+//       "user": "johnsheets"
+//     }, 
+//     "track": [
+//       {
+//         "@attr": {
+//           "nowplaying": "true"
+//         }, 
+//         "album": {
+//           "#text": "Live At The Paradiso", 
+//           "mbid": "cbfdffdb-3072-4164-a479-feddb8183b90"
+//         }, 
+//         "artist": {
+//           "#text": "Van Der Graaf Generator", 
+//           "mbid": "b892f72d-05e2-4ff7-b863-3d5dec6331fd"
+//         }, 
+//         "image": [
+//           {
+//             "#text": "http://userserve-ak.last.fm/serve/34s/38324585.jpg", 
+//             "size": "small"
+//           }, 
+//           {
+//             "#text": "http://userserve-ak.last.fm/serve/64s/38324585.jpg", 
+//             "size": "medium"
+//           }, 
+//           {
+//             "#text": "http://userserve-ak.last.fm/serve/126/38324585.jpg", 
+//             "size": "large"
+//           }, 
+//           {
+//             "#text": "http://userserve-ak.last.fm/serve/300x300/38324585.jpg", 
+//             "size": "extralarge"
+//           }
+//         ], 
+//         "mbid": "", 
+//         "name": "A Place to Survive", 
+//         "streamable": "1", 
+//         "url": "http://www.last.fm/music/Van+Der+Graaf+Generator/_/A+Place+to+Survive"
+//       }
+//     ]
+//   }
+// }
+
 - (id)initWithJson:(NSString *)json
 {
     if ((self = [super initWithJson:json]))
