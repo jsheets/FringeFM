@@ -1,8 +1,8 @@
 //
-//  FFMLastFMUpdater.h
+//  FFMLastFmAppUpdater.h
 //  FringeFM
 //
-//  Created by John Sheets on 5/14/12.
+//  Created by John Sheets on 6/10/12.
 //  Copyright (c) 2012 John Sheets. All rights reserved.
 //
 // MIT License
@@ -25,12 +25,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
 #import "FFMSongUpdater.h"
 
-/**
- * Downloader for last.fm user.getrecenttracks data; manages ASIHTTPRequest calls and last.fm API key.
- */
-@interface FFMLastFMUpdater : FFMSongUpdater
+@interface FFMLastFmAppUpdater : FFMSongUpdater
 
 @end
