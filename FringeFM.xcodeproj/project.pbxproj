@@ -63,6 +63,10 @@
 		0DA9F8C01561417500A110A9 /* FFMLastFMUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F8BD1561417500A110A9 /* FFMLastFMUpdater.h */; };
 		0DA9F8C11561417500A110A9 /* FFMLastFMUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F8BE1561417500A110A9 /* FFMLastFMUpdater.m */; };
 		0DA9F8C21561417500A110A9 /* FFMLastFMUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DA9F8BE1561417500A110A9 /* FFMLastFMUpdater.m */; };
+		0DB3534915853E5400857A92 /* FFMSong.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB3534715853E5400857A92 /* FFMSong.h */; };
+		0DB3534A15853E5400857A92 /* FFMSong.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB3534715853E5400857A92 /* FFMSong.h */; };
+		0DB3534B15853E5400857A92 /* FFMSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3534815853E5400857A92 /* FFMSong.m */; };
+		0DB3534C15853E5400857A92 /* FFMSong.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3534815853E5400857A92 /* FFMSong.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +120,8 @@
 		0DA9F8BA1561400F00A110A9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0DA9F8BD1561417500A110A9 /* FFMLastFMUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMLastFMUpdater.h; sourceTree = "<group>"; };
 		0DA9F8BE1561417500A110A9 /* FFMLastFMUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMLastFMUpdater.m; sourceTree = "<group>"; };
+		0DB3534715853E5400857A92 /* FFMSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMSong.h; sourceTree = "<group>"; };
+		0DB3534815853E5400857A92 /* FFMSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMSong.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,8 @@
 		0D32B2771558630D00598A14 /* FringeFM */ = {
 			isa = PBXGroup;
 			children = (
+				0DB3534715853E5400857A92 /* FFMSong.h */,
+				0DB3534815853E5400857A92 /* FFMSong.m */,
 				0D7E2B1015589C3F00C1EA0C /* FFMJson.h */,
 				0D7E2B1115589C3F00C1EA0C /* FFMJson.m */,
 				0D7E2B1215589C3F00C1EA0C /* FFMLastFmJson.h */,
@@ -315,6 +323,7 @@
 				0DA9F8B115613F1600A110A9 /* ASINetworkQueue.h in Headers */,
 				0DA9F8B515613F1600A110A9 /* ASIProgressDelegate.h in Headers */,
 				0DA9F8BF1561417500A110A9 /* FFMLastFMUpdater.h in Headers */,
+				0DB3534915853E5400857A92 /* FFMSong.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +345,7 @@
 				0DA9F8B215613F1600A110A9 /* ASINetworkQueue.h in Headers */,
 				0DA9F8B615613F1600A110A9 /* ASIProgressDelegate.h in Headers */,
 				0DA9F8C01561417500A110A9 /* FFMLastFMUpdater.h in Headers */,
+				0DB3534A15853E5400857A92 /* FFMSong.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +450,7 @@
 				0DA9F8AF15613F1600A110A9 /* ASIInputStream.m in Sources */,
 				0DA9F8B315613F1600A110A9 /* ASINetworkQueue.m in Sources */,
 				0DA9F8C11561417500A110A9 /* FFMLastFMUpdater.m in Sources */,
+				0DB3534B15853E5400857A92 /* FFMSong.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +468,7 @@
 				0DA9F8B015613F1600A110A9 /* ASIInputStream.m in Sources */,
 				0DA9F8B415613F1600A110A9 /* ASINetworkQueue.m in Sources */,
 				0DA9F8C21561417500A110A9 /* FFMLastFMUpdater.m in Sources */,
+				0DB3534C15853E5400857A92 /* FFMSong.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
