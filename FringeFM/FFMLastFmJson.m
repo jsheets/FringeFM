@@ -26,15 +26,11 @@
 // THE SOFTWARE.
 
 #import "FFMLastFmJson.h"
+#import "FFMSong.h"
 
 @implementation FFMLastFmJson
 
-@synthesize isPlaying = _isPlaying;
-@synthesize artist = _artist;
-@synthesize album = _album;
-@synthesize track = _track;
-@synthesize artSmallUrl = _artSmallUrl;
-@synthesize error = _error;
+@synthesize song = _song;
 
 // Sample JSON:
 //
@@ -91,19 +87,21 @@
 {
     if ((self = [super initWithJson:json]))
     {
+        self.song = [[FFMSong alloc] init];
+        
         // Check for error: {"error":8,"message":"Error fetching recent tracks"}
         if ([self valueForProperty:@"error"])
         {
-            self.error = [self valueForProperty:@"message"];
+            self.song.error = [self valueForProperty:@"message"];
         }
 
         // Assign nowPlaying property.
         NSString *nowPlayingValue = [self valueForProperty:@"recenttracks.track[0].@attr.nowplaying"];
-        self.isPlaying = [nowPlayingValue isEqualToString:@"true"];
+        self.song.isPlaying = [nowPlayingValue isEqualToString:@"true"];
 
-        self.artist = [self valueForProperty:@"recenttracks.track[0].artist.#text"];
-        self.album = [self valueForProperty:@"recenttracks.track[0].album.#text"];
-        self.track = [self valueForProperty:@"recenttracks.track[0].name"];
+        self.song.artist = [self valueForProperty:@"recenttracks.track[0].artist.#text"];
+        self.song.album = [self valueForProperty:@"recenttracks.track[0].album.#text"];
+        self.song.track = [self valueForProperty:@"recenttracks.track[0].name"];
 
         NSArray *images = [self valueForProperty:@"recenttracks.track[0].image"];
         for (NSDictionary *imageDict in images)
@@ -113,7 +111,7 @@
                 NSString *urlString = [imageDict valueForKey:@"#text"];
                 if ([urlString length])
                 {
-                    self.artSmallUrl = [NSURL URLWithString:urlString];
+                    self.song.artSmallUrl = [NSURL URLWithString:urlString];
                 }
 
                 break;

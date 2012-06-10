@@ -28,17 +28,13 @@
 #import <Foundation/Foundation.h>
 #import "FFMJson.h"
 
+@class FFMSong;
+
 /**
  * Friendly wrapper around last.fm JSON for API call user.getrecenttracks.
  */
 @interface FFMLastFmJson : FFMJson
 
-@property (assign) BOOL isPlaying;
-
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSString *error;
+@property (strong) FFMSong *song;
 
 @end
