@@ -40,5 +40,6 @@
 @synthesize artLargeUrl = _artLargeUrl;
 
 @synthesize error = _error;
+@synthesize source = _source;
 
 @end

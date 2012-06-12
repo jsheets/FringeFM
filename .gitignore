@@ -13,3 +13,5 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+
+Specs/data/user_info.yml

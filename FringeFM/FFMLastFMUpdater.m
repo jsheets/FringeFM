@@ -25,8 +25,66 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import "FFMSong.h"
+#import "FFMLastFmJson.h"
 #import "FFMLastFMUpdater.h"
+#import "ASIHTTPRequest.h"
 
 @implementation FFMLastFMUpdater
+
+@synthesize userName = _userName;
+@synthesize apiKey = _apiKey;
+
+- (id)initWithUserName:(NSString *)userName apiKey:(NSString *)apiKey
+{
+    if ((self = [super init]))
+    {
+        // Initialization.
+        self.userName = userName;
+        self.apiKey = apiKey;
+    }
+
+    return self;
+}
+
+// Fetch the currently playing song from the last.fm web REST API. Synchronous?
+- (FFMSong *)fetchCurrentSong
+{
+    __block FFMSong *currentSong = nil;
+
+    NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=%@&limit=2&user=%@&format=json", self.apiKey, self.userName];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSLog(@"Looking up last.fm URL: %@", url);
+
+    __block __unsafe_unretained
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+
+    [request setCompletionBlock:^{
+        // Completed the HTTP request from last.fm. Now load the JSON response into a FFMSong object.
+        NSString *responseString = [request responseString];
+        NSLog(@"Received JSON: %@", responseString);
+
+        FFMLastFmJson *currentlyPlaying = [[FFMLastFmJson alloc] initWithJson:responseString];
+        currentSong = currentlyPlaying.song;
+
+        // Attach wrapper JSON object to the song in case we need it later (we will).
+        currentSong.source = currentlyPlaying;
+    }];
+
+    [request setFailedBlock:^{
+        NSError *error = [request error];
+        NSString *errString = [NSString stringWithFormat:@"Error updating last.fm status: %@", [error localizedDescription]];
+        NSLog(@"%@", errString);
+
+        // Create an empty song object to return the error string in. Essentially a null object.
+        currentSong = [[FFMSong alloc] init];
+        currentSong.error = errString;
+    }];
+
+    [request startSynchronous];
+    request = nil;
+
+    return currentSong;
+}
 
 @end

@@ -29,8 +29,9 @@
 
 @interface FFMSong : NSObject
 
-@property (assign) BOOL isPlaying;
+@property (strong) id source;
 
+@property (assign) BOOL isPlaying;
 @property (strong) NSString *artist;
 @property (strong) NSString *album;
 @property (strong) NSString *track;
