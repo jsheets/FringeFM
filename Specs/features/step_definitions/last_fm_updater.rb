@@ -7,7 +7,7 @@ def user_info
   YAML.load_file(yml_file)
 end
 
-Given /^a last.fm API key$/ do
+Given /^we have a last.fm API key$/ do
   # A bit dicey here, since these values shouldn't be checked into git.
   #
   # Reads API key from the YAML file data/user_info.yml. You'll
@@ -21,13 +21,6 @@ Given /^a last.fm API key$/ do
   @user_name.should_not be_nil, "Unable to find last_fm[user] in data/user_info.yml file: #{user_info.inspect}"
 end
 
-When /^I download the current track$/ do
+When /^we are using the last.fm updater$/ do
   @updater = FFMLastFMUpdater.alloc.initWithUserName_apiKey(@user_name, @api_key)
-  @song = @updater.fetchCurrentSong
-  @song.should_not be_nil
-  @song.error.should be_nil, "Should not receive error for valid last.fm user '#{@user_name}': #{@song.error}"
-end
-
-Then /^I get valid track info$/ do
-  pending
 end

@@ -25,8 +25,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import "FFMSong.h"
 #import "FFMITunesUpdater.h"
+#import "iTunes.h"
 
 @implementation FFMITunesUpdater
+
+- (FFMSong *)fetchCurrentSong
+{
+    FFMSong *currentSong = [[FFMSong alloc] init];
+    
+    iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    if ([iTunes isRunning])
+    {
+        iTunesTrack *track = [iTunes currentTrack];
+
+        currentSong.track = track.name;
+        currentSong.artist = track.artist;
+        currentSong.album = track.album;
+    }
+
+    return currentSong;
+}
 
 @end
