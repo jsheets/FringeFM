@@ -14,6 +14,6 @@ When /^a song is playing$/ do
   tell_app("iTunes", "play track \"#{@track_name}\"")
 end
 
-When /^we are using the iTunes updater$/ do
+When /^we are using the iTunes application updater$/ do
   @updater = FFMITunesUpdater.alloc.init
 end

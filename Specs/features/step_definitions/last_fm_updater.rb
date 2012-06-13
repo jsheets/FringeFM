@@ -7,6 +7,10 @@ def user_info
   YAML.load_file(yml_file)
 end
 
+#
+# last.fm web API.
+#
+
 Given /^we have a last.fm API key$/ do
   # A bit dicey here, since these values shouldn't be checked into git.
   #
@@ -21,6 +25,18 @@ Given /^we have a last.fm API key$/ do
   @user_name.should_not be_nil, "Unable to find last_fm[user] in data/user_info.yml file: #{user_info.inspect}"
 end
 
-When /^we are using the last.fm updater$/ do
+When /^we are using the last.fm web updater$/ do
   @updater = FFMLastFMUpdater.alloc.initWithUserName_apiKey(@user_name, @api_key)
+end
+
+#
+# last.fm desktop application.
+#
+
+Given /^a song is playing in the last.fm application$/ do
+  pending
+end
+
+When /^we are using the last.fm application updater$/ do
+  @updater = FFMLastFMAppUpdater.alloc.init
 end
