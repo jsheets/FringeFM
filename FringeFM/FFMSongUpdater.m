@@ -34,4 +34,9 @@
     return nil;
 }
 
+- (BOOL)isServiceAvailable
+{
+    return NO;
+}
+
 @end

@@ -34,4 +34,6 @@
 // Returns NSError within FFMSong object.
 - (FFMSong *)fetchCurrentSong;
 
+- (BOOL)isServiceAvailable;
+
 @end

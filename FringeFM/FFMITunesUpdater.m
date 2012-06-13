@@ -48,4 +48,9 @@
     return currentSong;
 }
 
+- (BOOL)isServiceAvailable
+{
+    return [[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"] isRunning];
+}
+
 @end
