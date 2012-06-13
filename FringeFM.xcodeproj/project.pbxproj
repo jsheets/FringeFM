@@ -19,6 +19,17 @@
 		0D7E2B3115589D6D00C1EA0C /* FFMJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1115589C3F00C1EA0C /* FFMJson.m */; };
 		0D7E2B3215589D6D00C1EA0C /* FFMLastFmJson.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D7E2B1215589C3F00C1EA0C /* FFMLastFmJson.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D7E2B3315589D6D00C1EA0C /* FFMLastFmJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7E2B1315589C3F00C1EA0C /* FFMLastFmJson.m */; };
+		0D8E1BDE1588560F0033C6DE /* iTunes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BD91588560F0033C6DE /* iTunes.h */; };
+		0D8E1BDF1588560F0033C6DE /* iTunes.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BD91588560F0033C6DE /* iTunes.h */; };
+		0D8E1BE01588560F0033C6DE /* Last.fm.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BDA1588560F0033C6DE /* Last.fm.h */; };
+		0D8E1BE11588560F0033C6DE /* Last.fm.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BDA1588560F0033C6DE /* Last.fm.h */; };
+		0D8E1BE21588560F0033C6DE /* Mog.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BDB1588560F0033C6DE /* Mog.h */; };
+		0D8E1BE31588560F0033C6DE /* Mog.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BDB1588560F0033C6DE /* Mog.h */; };
+		0D8E1BE41588560F0033C6DE /* Rdio.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BDC1588560F0033C6DE /* Rdio.h */; };
+		0D8E1BE51588560F0033C6DE /* Rdio.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BDC1588560F0033C6DE /* Rdio.h */; };
+		0D8E1BE61588560F0033C6DE /* Spotify.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BDD1588560F0033C6DE /* Spotify.h */; };
+		0D8E1BE71588560F0033C6DE /* Spotify.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8E1BDD1588560F0033C6DE /* Spotify.h */; };
+		0D8E1BEA1588587D0033C6DE /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8E1BE91588587D0033C6DE /* ScriptingBridge.framework */; };
 		0DA9F89315613F1600A110A9 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F87D15613F1600A110A9 /* ASICacheDelegate.h */; };
 		0DA9F89415613F1600A110A9 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F87D15613F1600A110A9 /* ASICacheDelegate.h */; };
 		0DA9F89515613F1600A110A9 /* ASIDataCompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DA9F87E15613F1600A110A9 /* ASIDataCompressor.h */; };
@@ -122,6 +133,12 @@
 		0D83430D1558A3A000442C1A /* env.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = env.rb; sourceTree = "<group>"; };
 		0D83430E1558A3A000442C1A /* tables.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = tables.rb; sourceTree = "<group>"; };
 		0D8343151558A3AB00442C1A /* spec_helper.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = spec_helper.rb; sourceTree = "<group>"; };
+		0D8E1BD91588560F0033C6DE /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		0D8E1BDA1588560F0033C6DE /* Last.fm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Last.fm.h; sourceTree = "<group>"; };
+		0D8E1BDB1588560F0033C6DE /* Mog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mog.h; sourceTree = "<group>"; };
+		0D8E1BDC1588560F0033C6DE /* Rdio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rdio.h; sourceTree = "<group>"; };
+		0D8E1BDD1588560F0033C6DE /* Spotify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
+		0D8E1BE91588587D0033C6DE /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		0DA9F87D15613F1600A110A9 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = "External/asi-http-request/Classes/ASICacheDelegate.h"; sourceTree = "<group>"; };
 		0DA9F87E15613F1600A110A9 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = "External/asi-http-request/Classes/ASIDataCompressor.h"; sourceTree = "<group>"; };
 		0DA9F87F15613F1600A110A9 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataCompressor.m; path = "External/asi-http-request/Classes/ASIDataCompressor.m"; sourceTree = "<group>"; };
@@ -178,6 +195,7 @@
 				0DA9F8BB1561400F00A110A9 /* SystemConfiguration.framework in Frameworks */,
 				0DA9F8B915613FE100A110A9 /* libz.dylib in Frameworks */,
 				0D7E2B2215589D4100C1EA0C /* Cocoa.framework in Frameworks */,
+				0D8E1BEA1588587D0033C6DE /* ScriptingBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				0D32B2771558630D00598A14 /* FringeFM */,
+				0D8E1BD81588560F0033C6DE /* AppleScript Bridge */,
 				0DA9F87A15613EF600A110A9 /* ASIHTTPRequest */,
 				0D7E2B2315589D4100C1EA0C /* Specs */,
 				0D32B2701558630D00598A14 /* Frameworks */,
@@ -209,6 +228,7 @@
 			children = (
 				0D32B2711558630D00598A14 /* Cocoa.framework */,
 				0DA9F8BA1561400F00A110A9 /* SystemConfiguration.framework */,
+				0D8E1BE91588587D0033C6DE /* ScriptingBridge.framework */,
 				0DA9F8B715613FD500A110A9 /* libz.dylib */,
 				0D32B2731558630D00598A14 /* Other Frameworks */,
 			);
@@ -315,6 +335,19 @@
 				0D83430E1558A3A000442C1A /* tables.rb */,
 			);
 			path = support;
+			sourceTree = "<group>";
+		};
+		0D8E1BD81588560F0033C6DE /* AppleScript Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				0D8E1BD91588560F0033C6DE /* iTunes.h */,
+				0D8E1BDA1588560F0033C6DE /* Last.fm.h */,
+				0D8E1BDB1588560F0033C6DE /* Mog.h */,
+				0D8E1BDC1588560F0033C6DE /* Rdio.h */,
+				0D8E1BDD1588560F0033C6DE /* Spotify.h */,
+			);
+			name = "AppleScript Bridge";
+			path = Bridge;
 			sourceTree = "<group>";
 		};
 		0DA9F87A15613EF600A110A9 /* ASIHTTPRequest */ = {
@@ -426,6 +459,11 @@
 				0DB3538F15854ED300857A92 /* FFMMogUpdater.h in Headers */,
 				0DB3539515854EED00857A92 /* FFMLastFmAppUpdater.h in Headers */,
 				0DB3539B15854F2100857A92 /* FFMRdioUpdater.h in Headers */,
+				0D8E1BDE1588560F0033C6DE /* iTunes.h in Headers */,
+				0D8E1BE01588560F0033C6DE /* Last.fm.h in Headers */,
+				0D8E1BE21588560F0033C6DE /* Mog.h in Headers */,
+				0D8E1BE41588560F0033C6DE /* Rdio.h in Headers */,
+				0D8E1BE61588560F0033C6DE /* Spotify.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +492,11 @@
 				0DB3539015854ED300857A92 /* FFMMogUpdater.h in Headers */,
 				0DB3539615854EED00857A92 /* FFMLastFmAppUpdater.h in Headers */,
 				0DB3539C15854F2100857A92 /* FFMRdioUpdater.h in Headers */,
+				0D8E1BDF1588560F0033C6DE /* iTunes.h in Headers */,
+				0D8E1BE11588560F0033C6DE /* Last.fm.h in Headers */,
+				0D8E1BE31588560F0033C6DE /* Mog.h in Headers */,
+				0D8E1BE51588560F0033C6DE /* Rdio.h in Headers */,
+				0D8E1BE71588560F0033C6DE /* Spotify.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
