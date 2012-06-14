@@ -17,11 +17,3 @@ end
 When /^we are using the iTunes application updater$/ do
   @updater = FFMITunesUpdater.alloc.init
 end
-
-Then /^iTunes should be available$/ do
-  @updater.isServiceAvailable.should == 1
-end
-
-Then /^iTunes should not be available$/ do
-  @updater.isServiceAvailable.should == 0
-end

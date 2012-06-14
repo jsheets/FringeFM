@@ -22,9 +22,9 @@ Feature: iTunes application current track updater
   Scenario: Detect that service is available
     Given the "iTunes" application is running
     And we are using the iTunes application updater
-    Then iTunes should be available
+    Then the iTunes application should be available
 
   Scenario: Detect that service is not available
     Given the "iTunes" application is shut down
     And we are using the iTunes application updater
-    Then iTunes should not be available
+    Then the iTunes application should not be available

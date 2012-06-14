@@ -9,3 +9,11 @@ Then /^I get valid track info$/ do
   @song.artist.should == @artist
   @song.album.should == @album
 end
+
+Then /^the (?:.+) application should be available$/ do
+  @updater.isServiceAvailable.should == 1
+end
+
+Then /^the (?:.+) application should not be available$/ do
+  @updater.isServiceAvailable.should == 0
+end
