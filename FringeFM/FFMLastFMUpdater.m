@@ -78,7 +78,7 @@
 
         // Create an empty song object to return the error string in. Essentially a null object.
         currentSong = [[FFMSong alloc] init];
-        currentSong.error = errString;
+        currentSong.errorText = errString;
     }];
 
     [request startSynchronous];

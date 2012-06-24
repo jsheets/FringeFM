@@ -40,6 +40,6 @@
 @property (strong) NSURL *artMediumUrl;
 @property (strong) NSURL *artLargeUrl;
 
-@property (strong) NSString *error;
+@property (strong) NSString *errorText;
 
 @end

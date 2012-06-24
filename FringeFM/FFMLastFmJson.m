@@ -92,7 +92,7 @@
         // Check for error: {"error":8,"message":"Error fetching recent tracks"}
         if ([self valueForProperty:@"error"])
         {
-            self.song.error = [self valueForProperty:@"message"];
+            self.song.errorText = [self valueForProperty:@"message"];
         }
 
         // Assign nowPlaying property.

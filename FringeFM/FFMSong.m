@@ -39,7 +39,7 @@
 @synthesize artMediumUrl = _artMediumUrl;
 @synthesize artLargeUrl = _artLargeUrl;
 
-@synthesize error = _error;
+@synthesize errorText = _errorText;
 @synthesize source = _source;
 
 @end

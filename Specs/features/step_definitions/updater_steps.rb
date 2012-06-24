@@ -1,7 +1,7 @@
 When /^I ask for the current track$/ do
   @song = @updater.fetchCurrentSong
   @song.should_not be_nil
-  @song.error.should be_nil, "Should not receive error for valid last.fm user '#{@user_name}': #{@song.error}"
+  @song.errorText.should be_nil, "Should not receive error for valid last.fm user '#{@user_name}': #{@song.errorText}"
 end
 
 Then /^I get valid track info$/ do
