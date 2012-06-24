@@ -38,11 +38,13 @@
     iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
     if ([iTunes isRunning])
     {
-        iTunesTrack *track = [iTunes currentTrack];
-
-        currentSong.track = track.name;
-        currentSong.artist = track.artist;
-        currentSong.album = track.album;
+        iTunesTrack *track = iTunes.currentTrack;
+        if ([track exists])
+        {
+            currentSong.track = track.name;
+            currentSong.artist = track.artist;
+            currentSong.album = track.album;
+        }
     }
 
     return currentSong;
