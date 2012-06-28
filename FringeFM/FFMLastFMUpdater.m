@@ -50,16 +50,19 @@
 // Fetch the currently playing song from the last.fm web REST API. Synchronous?
 - (FFMSong *)fetchCurrentSong
 {
-    __block FFMSong *currentSong = nil;
+    FFMSong *currentSong = nil;
 
     NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=%@&limit=2&user=%@&format=json", self.apiKey, self.userName];
     NSURL *url = [NSURL URLWithString:urlString];
     NSLog(@"Looking up last.fm URL: %@", url);
 
-    __block __unsafe_unretained
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request startSynchronous];
 
-    [request setCompletionBlock:^{
+    NSError *error = [request error];
+    if (error == nil)
+    {
+        // Success
         // Completed the HTTP request from last.fm. Now load the JSON response into a FFMSong object.
         NSString *responseString = [request responseString];
         NSLog(@"Received JSON: %@", responseString);
@@ -69,20 +72,17 @@
 
         // Attach wrapper JSON object to the song in case we need it later (we will).
         currentSong.source = currentlyPlaying;
-    }];
-
-    [request setFailedBlock:^{
-        NSError *error = [request error];
+    }
+    else
+    {
+        // Error
         NSString *errString = [NSString stringWithFormat:@"Error updating last.fm status: %@", [error localizedDescription]];
         NSLog(@"%@", errString);
 
         // Create an empty song object to return the error string in. Essentially a null object.
         currentSong = [[FFMSong alloc] init];
         currentSong.errorText = errString;
-    }];
-
-    [request startSynchronous];
-    request = nil;
+    }
 
     return currentSong;
 }
