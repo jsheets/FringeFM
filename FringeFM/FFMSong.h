@@ -36,6 +36,7 @@
 @property (strong) NSString *album;
 @property (strong) NSString *track;
 
+@property (strong) NSImage *albumImage;
 @property (strong) NSURL *artSmallUrl;
 @property (strong) NSURL *artMediumUrl;
 @property (strong) NSURL *artLargeUrl;
