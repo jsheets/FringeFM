@@ -31,9 +31,10 @@
 
 @interface FFMSongUpdater : NSObject
 
-// Returns NSError within FFMSong object.
-- (FFMSong *)fetchCurrentSong;
+@property (nonatomic, strong) NSString *iconName;
+@property (nonatomic) NSTimeInterval updateFrequency;
 
+- (FFMSong *)fetchCurrentSong;
 - (BOOL)isServiceAvailable;
 
 @end

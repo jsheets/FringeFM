@@ -29,6 +29,20 @@
 
 @implementation FFMSongUpdater
 
+@synthesize iconName = _iconName;
+@synthesize updateFrequency = _updateFrequency;
+
+- (id)init
+{
+    if ((self = [super init]))
+    {
+        // Initialization.
+        _updateFrequency = 15;
+    }
+
+    return self;
+}
+
 - (FFMSong *)fetchCurrentSong
 {
     return nil;
