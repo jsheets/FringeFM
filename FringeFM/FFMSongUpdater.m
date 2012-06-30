@@ -29,7 +29,7 @@
 
 @implementation FFMSongUpdater
 
-@synthesize iconName = _iconName;
+@synthesize icon = _icon;
 @synthesize updateFrequency = _updateFrequency;
 
 - (id)init
@@ -49,6 +49,11 @@
 }
 
 - (BOOL)isServiceAvailable
+{
+    return NO;
+}
+
+- (BOOL)isServicePlaying
 {
     return NO;
 }

@@ -39,8 +39,7 @@
     SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
     if ([spotify isRunning])
     {
-        SpotifyEPlS playerState = spotify.playerState;
-        currentSong.isPlaying = (playerState == SpotifyEPlSPlaying);
+        currentSong.isPlaying = self.isServicePlaying;
 
         SpotifyTrack *track = spotify.currentTrack;
         NSLog(@"Spotify track: %@", track);
@@ -72,6 +71,12 @@
 - (BOOL)isServiceAvailable
 {
     return [[SBApplication applicationWithBundleIdentifier:@"com.spotify.client"] isRunning];
+}
+
+- (BOOL)isServicePlaying
+{
+    SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+    return spotify.playerState == SpotifyEPlSPlaying;
 }
 
 @end

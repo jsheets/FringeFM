@@ -31,10 +31,11 @@
 
 @interface FFMSongUpdater : NSObject
 
-@property (nonatomic, strong) NSString *iconName;
+@property (nonatomic, strong) NSImage *icon;
 @property (nonatomic) NSTimeInterval updateFrequency;
 
 - (FFMSong *)fetchCurrentSong;
 - (BOOL)isServiceAvailable;
+- (BOOL)isServicePlaying;
 
 @end
