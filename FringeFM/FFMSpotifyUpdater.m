@@ -26,7 +26,52 @@
 // THE SOFTWARE.
 
 #import "FFMSpotifyUpdater.h"
+#import "FFMSong.h"
+#import "Spotify.h"
 
 @implementation FFMSpotifyUpdater
+
+- (FFMSong *)fetchCurrentSong
+{
+    NSLog(@"Fetching current song from Spotify");
+    FFMSong *currentSong = [[FFMSong alloc] init];
+
+    SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+    if ([spotify isRunning])
+    {
+        SpotifyEPlS playerState = spotify.playerState;
+        currentSong.isPlaying = (playerState == SpotifyEPlSPlaying);
+
+        SpotifyTrack *track = spotify.currentTrack;
+        NSLog(@"Spotify track: %@", track);
+
+        if (track.name)
+        {
+            currentSong.track = track.name;
+            currentSong.artist = track.artist;
+            currentSong.album = track.album;
+
+            if (track.artwork)
+            {
+                currentSong.albumImage = track.artwork;
+            }
+        }
+        else
+        {
+            currentSong.errorText = @"Spotify is running but nothing is playing.";
+        }
+    }
+    else
+    {
+        currentSong.errorText = @"Spotify is not running.";
+    }
+
+    return currentSong;
+}
+
+- (BOOL)isServiceAvailable
+{
+    return [[SBApplication applicationWithBundleIdentifier:@"com.spotify.client"] isRunning];
+}
 
 @end
