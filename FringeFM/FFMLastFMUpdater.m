@@ -81,7 +81,7 @@
 
         // Create an empty song object to return the error string in. Essentially a null object.
         currentSong = [[FFMSong alloc] init];
-        currentSong.errorText = errString;
+        currentSong.errorText = [NSString stringWithFormat:@"last.fm Error: %@", errString];
     }
 
     return currentSong;

@@ -25,14 +25,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFMSong.h"
 #import "FFMITunesUpdater.h"
+#import "FFMSong.h"
 #import "iTunes.h"
 
 @implementation FFMITunesUpdater
 
 - (FFMSong *)fetchCurrentSong
 {
+    NSLog(@"Fetching current song from iTunes");
     FFMSong *currentSong = [[FFMSong alloc] init];
     
     iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
@@ -45,6 +46,14 @@
             currentSong.artist = track.artist;
             currentSong.album = track.album;
         }
+        else
+        {
+            currentSong.errorText = @"iTunes is running but nothing is playing.";
+        }
+    }
+    else
+    {
+        currentSong.errorText = @"iTunes is not running.";
     }
 
     return currentSong;
