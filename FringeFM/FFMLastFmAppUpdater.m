@@ -29,4 +29,10 @@
 
 @implementation FFMLastFmAppUpdater
 
+- (BOOL)isServicePlaying
+{
+    // No way to get this via AppleScript.
+    return YES;
+}
+
 @end

@@ -29,4 +29,9 @@
 
 @implementation FFMRdioUpdater
 
+- (BOOL)isServicePlaying
+{
+    return NO;
+}
+
 @end

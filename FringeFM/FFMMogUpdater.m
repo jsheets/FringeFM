@@ -29,4 +29,9 @@
 
 @implementation FFMMogUpdater
 
+- (BOOL)isServicePlaying
+{
+    return NO;
+}
+
 @end

@@ -87,4 +87,9 @@
     return currentSong;
 }
 
+- (BOOL)isServicePlaying
+{
+    return YES;
+}
+
 @end

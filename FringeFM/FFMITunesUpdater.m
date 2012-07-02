@@ -64,4 +64,10 @@
     return [[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"] isRunning];
 }
 
+- (BOOL)isServicePlaying
+{
+    iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    return iTunes.playerState == iTunesEPlSPlaying;
+}
+
 @end
