@@ -36,11 +36,11 @@
     NSLog(@"Fetching current song from Last.fm.app");
     FFMSong *currentSong = [[FFMSong alloc] init];
 
-    LastApplication *lastfm = (LastApplication *)[SBApplication applicationWithBundleIdentifier:@"fm.last.Last.fm"];
-    if ([lastfm isRunning])
+    if (self.isServiceAvailable)
     {
         currentSong.isPlaying = self.isServicePlaying;
 
+        LastApplication *lastfm = (LastApplication *)[SBApplication applicationWithBundleIdentifier:@"fm.last.Last.fm"];
         if (lastfm.trackTitle)
         {
             currentSong.track = lastfm.trackTitle;

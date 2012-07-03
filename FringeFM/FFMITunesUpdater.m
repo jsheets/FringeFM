@@ -36,9 +36,9 @@
     NSLog(@"Fetching current song from iTunes");
     FFMSong *currentSong = [[FFMSong alloc] init];
     
-    iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-    if ([iTunes isRunning])
+    if (self.isServiceAvailable)
     {
+        iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
         iTunesTrack *track = iTunes.currentTrack;
         if ([track exists])
         {
