@@ -26,12 +26,57 @@
 // THE SOFTWARE.
 
 #import "FFMRdioUpdater.h"
+#import "FFMSong.h"
+#import "Rdio.h"
 
 @implementation FFMRdioUpdater
 
+- (FFMSong *)fetchCurrentSong
+{
+    NSLog(@"Fetching current song from Rdio");
+    FFMSong *currentSong = [[FFMSong alloc] init];
+
+    if (self.isServiceAvailable)
+    {
+        currentSong.isPlaying = self.isServicePlaying;
+
+        RdioApplication *rdio = (RdioApplication *)[SBApplication applicationWithBundleIdentifier:@"com.rdio.desktop"];
+        RdioTrack *track = rdio.currentTrack;
+        NSLog(@"Rdio track: %@", track);
+
+        if (track.name)
+        {
+            currentSong.track = track.name;
+            currentSong.artist = track.artist;
+            currentSong.album = track.album;
+
+            if (track.artwork)
+            {
+                currentSong.albumImage = (NSImage *)track.artwork;
+            }
+        }
+        else
+        {
+            currentSong.errorText = @"Rdio is running but nothing is playing.";
+        }
+    }
+    else
+    {
+        currentSong.errorText = @"Rdio is not running.";
+    }
+
+    return currentSong;
+}
+
+- (BOOL)isServiceAvailable
+{
+    return [[SBApplication applicationWithBundleIdentifier:@"com.rdio.desktop"] isRunning];
+}
+
 - (BOOL)isServicePlaying
 {
-    return NO;
+    RdioApplication *rdio = (RdioApplication *)[SBApplication applicationWithBundleIdentifier:@"com.rdio.desktop"];
+    return rdio.playerState == RdioEPSSPlaying;
 }
 
 @end
