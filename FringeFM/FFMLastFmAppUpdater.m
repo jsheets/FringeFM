@@ -26,8 +26,48 @@
 // THE SOFTWARE.
 
 #import "FFMLastFmAppUpdater.h"
+#import "Last.fm.h"
+#import "FFMSong.h"
 
 @implementation FFMLastFmAppUpdater
+
+- (FFMSong *)fetchCurrentSong
+{
+    NSLog(@"Fetching current song from Last.fm.app");
+    FFMSong *currentSong = [[FFMSong alloc] init];
+
+    LastApplication *lastfm = (LastApplication *)[SBApplication applicationWithBundleIdentifier:@"fm.last.Last.fm"];
+    if ([lastfm isRunning])
+    {
+        currentSong.isPlaying = self.isServicePlaying;
+
+        if (lastfm.trackTitle)
+        {
+            currentSong.track = lastfm.trackTitle;
+            currentSong.artist = lastfm.artist;
+            currentSong.album = lastfm.album;
+            if (lastfm.artwork)
+            {
+                currentSong.albumImage = [[NSImage alloc] initWithData:lastfm.artwork];
+            }
+        }
+        else
+        {
+            currentSong.errorText = @"Last.fm is running but nothing is playing.";
+        }
+    }
+    else
+    {
+        currentSong.errorText = @"Last.fm is not running.";
+    }
+
+    return currentSong;
+}
+
+- (BOOL)isServiceAvailable
+{
+    return [[SBApplication applicationWithBundleIdentifier:@"fm.last.Last.fm"] isRunning];
+}
 
 - (BOOL)isServicePlaying
 {
