@@ -71,7 +71,8 @@
 - (BOOL)isServicePlaying
 {
     // No way to get this via AppleScript.
-    return YES;
+    LastApplication *lastfm = (LastApplication *)[SBApplication applicationWithBundleIdentifier:@"fm.last.Last.fm"];
+    return (lastfm.trackTitle != nil);
 }
 
 @end
