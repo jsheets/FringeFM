@@ -6,7 +6,7 @@
 #import <ScriptingBridge/ScriptingBridge.h>
 
 
-@class LastApplication;
+@class LastFmApplication;
 
 
 
@@ -15,7 +15,7 @@
  */
 
 // The application's top-level scripting object.
-@interface LastApplication : SBApplication
+@interface LastFmApplication : SBApplication
 
 @property (copy, readonly) NSString *trackTitle;  // Title of currently playing track.
 @property (copy, readonly) NSString *artist;  // Artist of currently playing track.
