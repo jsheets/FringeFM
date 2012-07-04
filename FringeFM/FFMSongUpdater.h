@@ -33,6 +33,10 @@
 
 @property (nonatomic, strong) NSImage *icon;
 @property (nonatomic) NSUInteger updateFrequency;
+@property (strong) NSString *appId;
+@property (strong) NSString *appName;
+
+- (id)initWithAppId:(NSString *)appId appName:(NSString *)appName;
 
 - (FFMSong *)fetchCurrentSong;
 - (BOOL)isServiceAvailable;

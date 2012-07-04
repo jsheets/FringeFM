@@ -31,6 +31,11 @@
 
 @implementation FFMRdioUpdater
 
+- (id)init
+{
+    return [super initWithAppId:@"com.rdio.desktop" appName:@"Rdio"];
+}
+
 - (FFMSong *)fetchCurrentSong
 {
     FFMSong *currentSong = [[FFMSong alloc] init];
@@ -39,7 +44,7 @@
     {
         currentSong.isPlaying = self.isServicePlaying;
 
-        RdioApplication *rdio = (RdioApplication *)[SBApplication applicationWithBundleIdentifier:@"com.rdio.desktop"];
+        RdioApplication *rdio = (RdioApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
         RdioTrack *track = rdio.currentTrack;
         if (track.name)
         {
@@ -67,12 +72,12 @@
 
 - (BOOL)isServiceAvailable
 {
-    return [[SBApplication applicationWithBundleIdentifier:@"com.rdio.desktop"] isRunning];
+    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
 }
 
 - (BOOL)isServicePlaying
 {
-    RdioApplication *rdio = (RdioApplication *)[SBApplication applicationWithBundleIdentifier:@"com.rdio.desktop"];
+    RdioApplication *rdio = (RdioApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
     return rdio.playerState == RdioEPSSPlaying;
 }
 

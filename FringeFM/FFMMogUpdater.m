@@ -31,6 +31,11 @@
 
 @implementation FFMMogUpdater
 
+- (id)init
+{
+    return [super initWithAppId:@"com.mog.desktop" appName:@"Mog"];
+}
+
 - (FFMSong *)fetchCurrentSong
 {
     FFMSong *currentSong = [[FFMSong alloc] init];
@@ -39,7 +44,7 @@
     {
         currentSong.isPlaying = self.isServicePlaying;
 
-        MogApplication *mog = (MogApplication *)[SBApplication applicationWithBundleIdentifier:@"com.mog.desktop"];
+        MogApplication *mog = (MogApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
         if (mog.title)
         {
             currentSong.track = mog.title;
@@ -66,12 +71,12 @@
 
 - (BOOL)isServiceAvailable
 {
-    return [[SBApplication applicationWithBundleIdentifier:@"com.mog.desktop"] isRunning];
+    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
 }
 
 - (BOOL)isServicePlaying
 {
-    MogApplication *mog = (MogApplication *)[SBApplication applicationWithBundleIdentifier:@"com.mog.desktop"];
+    MogApplication *mog = (MogApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
     return (mog.title != nil);
 }
 

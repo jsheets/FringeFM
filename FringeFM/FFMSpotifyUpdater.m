@@ -31,6 +31,11 @@
 
 @implementation FFMSpotifyUpdater
 
+- (id)init
+{
+    return [super initWithAppId:@"com.spotify.client" appName:@"Spotify"];
+}
+
 - (FFMSong *)fetchCurrentSong
 {
     FFMSong *currentSong = [[FFMSong alloc] init];
@@ -39,7 +44,7 @@
     {
         currentSong.isPlaying = self.isServicePlaying;
 
-        SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+        SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
         SpotifyTrack *track = spotify.currentTrack;
         if (track.name)
         {
@@ -67,12 +72,12 @@
 
 - (BOOL)isServiceAvailable
 {
-    return [[SBApplication applicationWithBundleIdentifier:@"com.spotify.client"] isRunning];
+    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
 }
 
 - (BOOL)isServicePlaying
 {
-    SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
+    SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
     return spotify.playerState == SpotifyEPlSPlaying;
 }
 

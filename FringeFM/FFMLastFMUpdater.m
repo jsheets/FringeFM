@@ -33,15 +33,14 @@
 @implementation FFMLastFMUpdater
 
 @synthesize userName = _userName;
-@synthesize apiKey = _apiKey;
 
 - (id)initWithUserName:(NSString *)userName apiKey:(NSString *)apiKey
 {
-    if ((self = [super init]))
+    if ((self = [super initWithAppId:apiKey appName:@"Last.fm API"]))
     {
         // Initialization.
         self.userName = userName;
-        self.apiKey = apiKey;
+        self.updateFrequency = 15;
     }
 
     return self;
@@ -52,7 +51,7 @@
 {
     FFMSong *currentSong = nil;
 
-    NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=%@&limit=2&user=%@&format=json", self.apiKey, self.userName];
+    NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=%@&limit=2&user=%@&format=json", self.appId, self.userName];
     NSURL *url = [NSURL URLWithString:urlString];
     NSLog(@"Looking up last.fm URL: %@", url);
 
@@ -65,7 +64,7 @@
         // Success
         // Completed the HTTP request from last.fm. Now load the JSON response into a FFMSong object.
         NSString *responseString = [request responseString];
-        NSLog(@"Received JSON: %@", responseString);
+//        NSLog(@"Received JSON: %@", responseString);
 
         FFMLastFmJson *currentlyPlaying = [[FFMLastFmJson alloc] initWithJson:responseString];
         currentSong = currentlyPlaying.song;

@@ -31,13 +31,18 @@
 
 @implementation FFMITunesUpdater
 
+- (id)init
+{
+    return [super initWithAppId:@"com.apple.iTunes" appName:@"iTunes"];
+}
+
 - (FFMSong *)fetchCurrentSong
 {
     FFMSong *currentSong = [[FFMSong alloc] init];
     
     if (self.isServiceAvailable)
     {
-        iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+        iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
         iTunesTrack *track = iTunes.currentTrack;
         if ([track exists])
         {
@@ -67,12 +72,12 @@
 
 - (BOOL)isServiceAvailable
 {
-    return [[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"] isRunning];
+    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
 }
 
 - (BOOL)isServicePlaying
 {
-    iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
     return iTunes.playerState == iTunesEPlSPlaying;
 }
 

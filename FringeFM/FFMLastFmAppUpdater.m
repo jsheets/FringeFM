@@ -31,6 +31,11 @@
 
 @implementation FFMLastFmAppUpdater
 
+- (id)init
+{
+    return [super initWithAppId:@"fm.last.Last.fm" appName:@"Last.fm"];
+}
+
 - (FFMSong *)fetchCurrentSong
 {
     FFMSong *currentSong = [[FFMSong alloc] init];
@@ -39,7 +44,7 @@
     {
         currentSong.isPlaying = self.isServicePlaying;
 
-        LastFmApplication *lastfm = (LastFmApplication *)[SBApplication applicationWithBundleIdentifier:@"fm.last.Last.fm"];
+        LastFmApplication *lastfm = (LastFmApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
         if (lastfm.trackTitle)
         {
             currentSong.track = lastfm.trackTitle;
@@ -65,13 +70,13 @@
 
 - (BOOL)isServiceAvailable
 {
-    return [[SBApplication applicationWithBundleIdentifier:@"fm.last.Last.fm"] isRunning];
+    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
 }
 
 - (BOOL)isServicePlaying
 {
     // No way to get this via AppleScript.
-    LastFmApplication *lastfm = (LastFmApplication *)[SBApplication applicationWithBundleIdentifier:@"fm.last.Last.fm"];
+    LastFmApplication *lastfm = (LastFmApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
     return (lastfm.trackTitle != nil);
 }
 

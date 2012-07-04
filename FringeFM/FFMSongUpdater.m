@@ -31,16 +31,25 @@
 
 @synthesize icon = _icon;
 @synthesize updateFrequency = _updateFrequency;
+@synthesize appId = _appId;
+@synthesize appName = _appName;
 
-- (id)init
+- (id)initWithAppId:(NSString *)appId appName:(NSString *)appName
 {
     if ((self = [super init]))
     {
         // Initialization.
-        _updateFrequency = 15;
+        _appId = appId;
+        _appName = appName;
+        _updateFrequency = 5;
     }
 
     return self;
+}
+
+- (id)init
+{
+    return [self initWithAppId:nil appName:nil];
 }
 
 - (FFMSong *)fetchCurrentSong
