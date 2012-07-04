@@ -1,8 +1,8 @@
 //
-//  FFMSpotifyUpdater.h
+//  FFMLocalSongUpdater.h
 //  FringeFM
 //
-//  Created by John Sheets on 6/10/12.
+//  Created by John Sheets on 7/4/12.
 //  Copyright (c) 2012 John Sheets. All rights reserved.
 //
 // MIT License
@@ -25,8 +25,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFMLocalSongUpdater.h"
+#import "FFMSongUpdater.h"
+#import <ScriptingBridge/ScriptingBridge.h>
 
-@interface FFMSpotifyUpdater : FFMLocalSongUpdater
+@interface FFMLocalSongUpdater : FFMSongUpdater
+
+// Retrieve the ScriptingBridge app proxy for this local music player.
+- (SBApplication *)localApp;
+
+// Attempt to load track info for the currently playing song, if any.
+- (BOOL)loadSong:(FFMSong *)currentSong;
 
 @end

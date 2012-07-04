@@ -36,48 +36,30 @@
     return [super initWithAppId:@"com.spotify.client" appName:@"Spotify"];
 }
 
-- (FFMSong *)fetchCurrentSong
+- (BOOL)loadSong:(FFMSong *)currentSong
 {
-    FFMSong *currentSong = [[FFMSong alloc] init];
+    SpotifyApplication *spotify = (SpotifyApplication *)self.localApp;
+    SpotifyTrack *track = spotify.currentTrack;
 
-    if (self.isServiceAvailable)
+    BOOL foundTrack = track.name != nil;
+    if (foundTrack)
     {
-        currentSong.isPlaying = self.isServicePlaying;
+        currentSong.track = track.name;
+        currentSong.artist = track.artist;
+        currentSong.album = track.album;
 
-        SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
-        SpotifyTrack *track = spotify.currentTrack;
-        if (track.name)
+        if (track.artwork)
         {
-            currentSong.track = track.name;
-            currentSong.artist = track.artist;
-            currentSong.album = track.album;
-
-            if (track.artwork)
-            {
-                currentSong.albumImage = track.artwork;
-            }
-        }
-        else
-        {
-            currentSong.errorText = @"Spotify is running but nothing is playing.";
+            currentSong.albumImage = track.artwork;
         }
     }
-    else
-    {
-        currentSong.errorText = @"Spotify is not running.";
-    }
 
-    return currentSong;
-}
-
-- (BOOL)isServiceAvailable
-{
-    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
+    return foundTrack;
 }
 
 - (BOOL)isServicePlaying
 {
-    SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
+    SpotifyApplication *spotify = (SpotifyApplication *)self.localApp;
     return spotify.playerState == SpotifyEPlSPlaying;
 }
 

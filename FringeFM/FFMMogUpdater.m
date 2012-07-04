@@ -36,47 +36,28 @@
     return [super initWithAppId:@"com.mog.desktop" appName:@"Mog"];
 }
 
-- (FFMSong *)fetchCurrentSong
+- (BOOL)loadSong:(FFMSong *)currentSong
 {
-    FFMSong *currentSong = [[FFMSong alloc] init];
-
-    if (self.isServiceAvailable)
+    MogApplication *mog = (MogApplication *)self.localApp;
+    BOOL foundTrack = mog.title != nil;
+    if (foundTrack)
     {
-        currentSong.isPlaying = self.isServicePlaying;
+        currentSong.track = mog.title;
+        currentSong.artist = mog.artist;
+        currentSong.album = mog.album;
 
-        MogApplication *mog = (MogApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
-        if (mog.title)
+        if (mog.artwork)
         {
-            currentSong.track = mog.title;
-            currentSong.artist = mog.artist;
-            currentSong.album = mog.album;
-
-            if (mog.artwork)
-            {
-                currentSong.albumImage = (NSImage *)mog.artwork;
-            }
-        }
-        else
-        {
-            currentSong.errorText = @"Mog is running but nothing is playing.";
+            currentSong.albumImage = (NSImage *)mog.artwork;
         }
     }
-    else
-    {
-        currentSong.errorText = @"Mog is not running.";
-    }
 
-    return currentSong;
-}
-
-- (BOOL)isServiceAvailable
-{
-    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
+    return foundTrack;
 }
 
 - (BOOL)isServicePlaying
 {
-    MogApplication *mog = (MogApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
+    MogApplication *mog = (MogApplication *)self.localApp;
     return (mog.title != nil);
 }
 

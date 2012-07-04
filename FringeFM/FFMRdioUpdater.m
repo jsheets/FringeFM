@@ -36,48 +36,30 @@
     return [super initWithAppId:@"com.rdio.desktop" appName:@"Rdio"];
 }
 
-- (FFMSong *)fetchCurrentSong
+- (BOOL)loadSong:(FFMSong *)currentSong
 {
-    FFMSong *currentSong = [[FFMSong alloc] init];
+    RdioApplication *rdio = (RdioApplication *)self.localApp;
+    RdioTrack *track = rdio.currentTrack;
 
-    if (self.isServiceAvailable)
+    BOOL foundTrack = track.name != nil;
+    if (foundTrack)
     {
-        currentSong.isPlaying = self.isServicePlaying;
+        currentSong.track = track.name;
+        currentSong.artist = track.artist;
+        currentSong.album = track.album;
 
-        RdioApplication *rdio = (RdioApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
-        RdioTrack *track = rdio.currentTrack;
-        if (track.name)
+        if (track.artwork)
         {
-            currentSong.track = track.name;
-            currentSong.artist = track.artist;
-            currentSong.album = track.album;
-
-            if (track.artwork)
-            {
-                currentSong.albumImage = (NSImage *)track.artwork;
-            }
-        }
-        else
-        {
-            currentSong.errorText = @"Rdio is running but nothing is playing.";
+            currentSong.albumImage = (NSImage *)track.artwork;
         }
     }
-    else
-    {
-        currentSong.errorText = @"Rdio is not running.";
-    }
 
-    return currentSong;
-}
-
-- (BOOL)isServiceAvailable
-{
-    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
+    return foundTrack;
 }
 
 - (BOOL)isServicePlaying
 {
-    RdioApplication *rdio = (RdioApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
+    RdioApplication *rdio = (RdioApplication *)self.localApp;
     return rdio.playerState == RdioEPSSPlaying;
 }
 

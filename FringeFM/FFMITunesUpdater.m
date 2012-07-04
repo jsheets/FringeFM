@@ -36,48 +36,32 @@
     return [super initWithAppId:@"com.apple.iTunes" appName:@"iTunes"];
 }
 
-- (FFMSong *)fetchCurrentSong
+- (BOOL)loadSong:(FFMSong *)currentSong
 {
-    FFMSong *currentSong = [[FFMSong alloc] init];
-    
-    if (self.isServiceAvailable)
-    {
-        iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
-        iTunesTrack *track = iTunes.currentTrack;
-        if ([track exists])
-        {
-            currentSong.track = track.name;
-            currentSong.artist = track.artist;
-            currentSong.album = track.album;
-            currentSong.isPlaying = self.isServicePlaying;
+    iTunesApplication *iTunes = (iTunesApplication *)self.localApp;
+    iTunesTrack *track = iTunes.currentTrack;
 
-            iTunesArtwork *artwork = (iTunesArtwork *)[[[track artworks] get] lastObject];
-            if (artwork)
-            {
-                currentSong.albumImage = [[NSImage alloc] initWithData:[artwork rawData]];
-            }
-        }
-        else
+    BOOL foundTrack = [track exists];
+    if (foundTrack)
+    {
+        currentSong.track = track.name;
+        currentSong.artist = track.artist;
+        currentSong.album = track.album;
+        currentSong.isPlaying = self.isServicePlaying;
+
+        iTunesArtwork *artwork = (iTunesArtwork *)[[[track artworks] get] lastObject];
+        if (artwork)
         {
-            currentSong.errorText = @"iTunes is running but nothing is playing.";
+            currentSong.albumImage = [[NSImage alloc] initWithData:[artwork rawData]];
         }
     }
-    else
-    {
-        currentSong.errorText = @"iTunes is not running.";
-    }
 
-    return currentSong;
-}
-
-- (BOOL)isServiceAvailable
-{
-    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
+    return foundTrack;
 }
 
 - (BOOL)isServicePlaying
 {
-    iTunesApplication *iTunes = (iTunesApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
+    iTunesApplication *iTunes = (iTunesApplication *)self.localApp;
     return iTunes.playerState == iTunesEPlSPlaying;
 }
 

@@ -36,47 +36,28 @@
     return [super initWithAppId:@"fm.last.Last.fm" appName:@"Last.fm"];
 }
 
-- (FFMSong *)fetchCurrentSong
+- (BOOL)loadSong:(FFMSong *)currentSong
 {
-    FFMSong *currentSong = [[FFMSong alloc] init];
-
-    if (self.isServiceAvailable)
+    LastFmApplication *lastfm = (LastFmApplication *)self.localApp;
+    BOOL foundTrack = lastfm.trackTitle != nil;
+    if (foundTrack)
     {
-        currentSong.isPlaying = self.isServicePlaying;
-
-        LastFmApplication *lastfm = (LastFmApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
-        if (lastfm.trackTitle)
+        currentSong.track = lastfm.trackTitle;
+        currentSong.artist = lastfm.artist;
+        currentSong.album = lastfm.album;
+        if (lastfm.artwork)
         {
-            currentSong.track = lastfm.trackTitle;
-            currentSong.artist = lastfm.artist;
-            currentSong.album = lastfm.album;
-            if (lastfm.artwork)
-            {
-                currentSong.albumImage = [[NSImage alloc] initWithData:lastfm.artwork];
-            }
-        }
-        else
-        {
-            currentSong.errorText = @"Last.fm is running but nothing is playing.";
+            currentSong.albumImage = [[NSImage alloc] initWithData:lastfm.artwork];
         }
     }
-    else
-    {
-        currentSong.errorText = @"Last.fm is not running.";
-    }
 
-    return currentSong;
-}
-
-- (BOOL)isServiceAvailable
-{
-    return [[SBApplication applicationWithBundleIdentifier:self.appId] isRunning];
+    return foundTrack;
 }
 
 - (BOOL)isServicePlaying
 {
     // No way to get this via AppleScript.
-    LastFmApplication *lastfm = (LastFmApplication *)[SBApplication applicationWithBundleIdentifier:self.appId];
+    LastFmApplication *lastfm = (LastFmApplication *)self.localApp;
     return (lastfm.trackTitle != nil);
 }
 

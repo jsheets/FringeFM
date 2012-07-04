@@ -25,8 +25,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "FFMSongUpdater.h"
+#import "FFMLocalSongUpdater.h"
 
-@interface FFMRdioUpdater : FFMSongUpdater
+@interface FFMRdioUpdater : FFMLocalSongUpdater
 
 @end

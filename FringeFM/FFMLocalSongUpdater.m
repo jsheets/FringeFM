@@ -1,8 +1,8 @@
 //
-//  FFMSpotifyUpdater.h
+//  FFMLocalSongUpdater.m
 //  FringeFM
 //
-//  Created by John Sheets on 6/10/12.
+//  Created by John Sheets on 7/4/12.
 //  Copyright (c) 2012 John Sheets. All rights reserved.
 //
 // MIT License
@@ -26,7 +26,45 @@
 // THE SOFTWARE.
 
 #import "FFMLocalSongUpdater.h"
+#import "FFMSong.h"
 
-@interface FFMSpotifyUpdater : FFMLocalSongUpdater
+@implementation FFMLocalSongUpdater
+
+- (SBApplication *)localApp
+{
+    return [SBApplication applicationWithBundleIdentifier:self.appId];
+}
+
+- (BOOL)loadSong:(FFMSong *)currentSong
+{
+    // Local app is running (isServiceAvailable), but can't get song info. Probably not playing.
+    return NO;
+}
+
+- (FFMSong *)fetchCurrentSong
+{
+    FFMSong *currentSong = [[FFMSong alloc] init];
+
+    if (self.isServiceAvailable)
+    {
+        currentSong.isPlaying = self.isServicePlaying;
+
+        if (![self loadSong:currentSong])
+        {
+            currentSong.errorText = [NSString stringWithFormat:@"%@ is running but nothing is playing.", self.appName];
+        }
+    }
+    else
+    {
+        currentSong.errorText = [NSString stringWithFormat:@"%@ is not running.", self.appName];
+    }
+
+    return currentSong;
+}
+
+- (BOOL)isServiceAvailable
+{
+    return [[self localApp] isRunning];
+}
 
 @end

@@ -102,6 +102,10 @@
 		0DB3539C15854F2100857A92 /* FFMRdioUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DB3539915854F2100857A92 /* FFMRdioUpdater.h */; };
 		0DB3539D15854F2100857A92 /* FFMRdioUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3539A15854F2100857A92 /* FFMRdioUpdater.m */; };
 		0DB3539E15854F2100857A92 /* FFMRdioUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB3539A15854F2100857A92 /* FFMRdioUpdater.m */; };
+		0DF5156315A4AD12005F7BC4 /* FFMLocalSongUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DF5156115A4AD12005F7BC4 /* FFMLocalSongUpdater.h */; };
+		0DF5156415A4AD12005F7BC4 /* FFMLocalSongUpdater.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DF5156115A4AD12005F7BC4 /* FFMLocalSongUpdater.h */; };
+		0DF5156515A4AD12005F7BC4 /* FFMLocalSongUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5156215A4AD12005F7BC4 /* FFMLocalSongUpdater.m */; };
+		0DF5156615A4AD12005F7BC4 /* FFMLocalSongUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF5156215A4AD12005F7BC4 /* FFMLocalSongUpdater.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +179,8 @@
 		0DB3539415854EED00857A92 /* FFMLastFmAppUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMLastFmAppUpdater.m; sourceTree = "<group>"; };
 		0DB3539915854F2100857A92 /* FFMRdioUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMRdioUpdater.h; sourceTree = "<group>"; };
 		0DB3539A15854F2100857A92 /* FFMRdioUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMRdioUpdater.m; sourceTree = "<group>"; };
+		0DF5156115A4AD12005F7BC4 /* FFMLocalSongUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMLocalSongUpdater.h; sourceTree = "<group>"; };
+		0DF5156215A4AD12005F7BC4 /* FFMLocalSongUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMLocalSongUpdater.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +260,8 @@
 				0D7E2B1115589C3F00C1EA0C /* FFMJson.m */,
 				0DB3537615854C5E00857A92 /* FFMSongUpdater.h */,
 				0DB3537715854C5E00857A92 /* FFMSongUpdater.m */,
+				0DF5156115A4AD12005F7BC4 /* FFMLocalSongUpdater.h */,
+				0DF5156215A4AD12005F7BC4 /* FFMLocalSongUpdater.m */,
 				0DB3537415854C2000857A92 /* last.fm */,
 				0DB3537F15854E6E00857A92 /* iTunes */,
 				0DB3537E15854E6500857A92 /* Spotify */,
@@ -464,6 +472,7 @@
 				0D8E1BE21588560F0033C6DE /* Mog.h in Headers */,
 				0D8E1BE41588560F0033C6DE /* Rdio.h in Headers */,
 				0D8E1BE61588560F0033C6DE /* Spotify.h in Headers */,
+				0DF5156315A4AD12005F7BC4 /* FFMLocalSongUpdater.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +506,7 @@
 				0D8E1BE31588560F0033C6DE /* Mog.h in Headers */,
 				0D8E1BE51588560F0033C6DE /* Rdio.h in Headers */,
 				0D8E1BE71588560F0033C6DE /* Spotify.h in Headers */,
+				0DF5156415A4AD12005F7BC4 /* FFMLocalSongUpdater.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +618,7 @@
 				0DB3539115854ED300857A92 /* FFMMogUpdater.m in Sources */,
 				0DB3539715854EED00857A92 /* FFMLastFmAppUpdater.m in Sources */,
 				0DB3539D15854F2100857A92 /* FFMRdioUpdater.m in Sources */,
+				0DF5156515A4AD12005F7BC4 /* FFMLocalSongUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +643,7 @@
 				0DB3539215854ED300857A92 /* FFMMogUpdater.m in Sources */,
 				0DB3539815854EED00857A92 /* FFMLastFmAppUpdater.m in Sources */,
 				0DB3539E15854F2100857A92 /* FFMRdioUpdater.m in Sources */,
+				0DF5156615A4AD12005F7BC4 /* FFMLocalSongUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
