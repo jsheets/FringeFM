@@ -48,7 +48,7 @@
 
             if (mog.artwork)
             {
-//                currentSong.albumImage = [[NSImage alloc] initWithData:mog.artwork];
+                currentSong.albumImage = (NSImage *)mog.artwork;
             }
         }
         else

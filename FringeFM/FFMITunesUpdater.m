@@ -44,6 +44,13 @@
             currentSong.track = track.name;
             currentSong.artist = track.artist;
             currentSong.album = track.album;
+            currentSong.isPlaying = self.isServicePlaying;
+
+            iTunesArtwork *artwork = (iTunesArtwork *)[[[track artworks] get] lastObject];
+            if (artwork)
+            {
+                currentSong.albumImage = [[NSImage alloc] initWithData:[artwork rawData]];
+            }
         }
         else
         {
