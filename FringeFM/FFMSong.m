@@ -43,4 +43,10 @@
 @synthesize errorText = _errorText;
 @synthesize source = _source;
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<FFMSong %@, %@, %@ (%@)>", self.track, self.artist, self.album,
+            self.isPlaying ? @"Playing" : @"Stopped"];
+}
+
 @end
