@@ -37,5 +37,6 @@
 - (FFMSong *)fetchCurrentSong;
 - (BOOL)isServiceAvailable;
 - (BOOL)isServicePlaying;
+- (BOOL)isServiceRemote;
 
 @end

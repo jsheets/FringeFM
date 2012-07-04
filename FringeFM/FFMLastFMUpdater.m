@@ -92,4 +92,9 @@
     return YES;
 }
 
+- (BOOL)isServiceRemote
+{
+    return YES;
+}
+
 @end

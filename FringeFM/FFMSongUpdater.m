@@ -58,4 +58,9 @@
     return NO;
 }
 
+- (BOOL)isServiceRemote
+{
+    return NO;
+}
+
 @end
