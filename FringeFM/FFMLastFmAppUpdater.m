@@ -33,7 +33,6 @@
 
 - (FFMSong *)fetchCurrentSong
 {
-    NSLog(@"Fetching current song from Last.fm.app");
     FFMSong *currentSong = [[FFMSong alloc] init];
 
     if (self.isServiceAvailable)

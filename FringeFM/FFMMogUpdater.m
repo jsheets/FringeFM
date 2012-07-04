@@ -33,7 +33,6 @@
 
 - (FFMSong *)fetchCurrentSong
 {
-    NSLog(@"Fetching current song from Mog");
     FFMSong *currentSong = [[FFMSong alloc] init];
 
     if (self.isServiceAvailable)
@@ -41,8 +40,6 @@
         currentSong.isPlaying = self.isServicePlaying;
 
         MogApplication *mog = (MogApplication *)[SBApplication applicationWithBundleIdentifier:@"com.mog.desktop"];
-        NSLog(@"Mog track: %@", mog.title);
-
         if (mog.title)
         {
             currentSong.track = mog.title;

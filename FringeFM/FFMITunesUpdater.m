@@ -33,7 +33,6 @@
 
 - (FFMSong *)fetchCurrentSong
 {
-    NSLog(@"Fetching current song from iTunes");
     FFMSong *currentSong = [[FFMSong alloc] init];
     
     if (self.isServiceAvailable)

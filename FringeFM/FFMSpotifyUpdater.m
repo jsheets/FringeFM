@@ -33,7 +33,6 @@
 
 - (FFMSong *)fetchCurrentSong
 {
-    NSLog(@"Fetching current song from Spotify");
     FFMSong *currentSong = [[FFMSong alloc] init];
 
     if (self.isServiceAvailable)
@@ -42,8 +41,6 @@
 
         SpotifyApplication *spotify = (SpotifyApplication *)[SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
         SpotifyTrack *track = spotify.currentTrack;
-        NSLog(@"Spotify track: %@", track);
-
         if (track.name)
         {
             currentSong.track = track.name;

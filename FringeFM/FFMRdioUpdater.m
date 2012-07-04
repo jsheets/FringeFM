@@ -33,7 +33,6 @@
 
 - (FFMSong *)fetchCurrentSong
 {
-    NSLog(@"Fetching current song from Rdio");
     FFMSong *currentSong = [[FFMSong alloc] init];
 
     if (self.isServiceAvailable)
@@ -42,8 +41,6 @@
 
         RdioApplication *rdio = (RdioApplication *)[SBApplication applicationWithBundleIdentifier:@"com.rdio.desktop"];
         RdioTrack *track = rdio.currentTrack;
-        NSLog(@"Rdio track: %@", track);
-
         if (track.name)
         {
             currentSong.track = track.name;
