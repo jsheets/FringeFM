@@ -30,6 +30,25 @@
 
 @implementation FFMLocalSongUpdater
 
+- (id)initWithAppId:(NSString *)appId appName:(NSString *)appName
+{
+    if ((self = [super initWithAppId:appId appName:appName]))
+    {
+        // For local apps, autopopulate the app icon with the installed application, if any.
+        // The appId is something like @"com.apple.iTunes". Can use the bundle id to find the
+        // path to the application bundle, and get the icon image from that.
+        NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+        NSString *bundlePath = [workspace absolutePathForAppBundleWithIdentifier:appId];
+        if (bundlePath)
+        {
+            // Found the app bundle. Try to load the icon from it.
+            self.icon = [workspace iconForFile:bundlePath];
+        }
+    }
+
+    return self;
+}
+
 - (SBApplication *)localApp
 {
     return [SBApplication applicationWithBundleIdentifier:self.appId];
