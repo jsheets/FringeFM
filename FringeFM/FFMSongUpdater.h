@@ -32,7 +32,7 @@
 @interface FFMSongUpdater : NSObject
 
 @property (nonatomic, strong) NSImage *icon;
-@property (nonatomic) NSTimeInterval updateFrequency;
+@property (nonatomic) NSUInteger updateFrequency;
 
 - (FFMSong *)fetchCurrentSong;
 - (BOOL)isServiceAvailable;
