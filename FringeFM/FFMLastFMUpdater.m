@@ -53,7 +53,7 @@
 
     NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=%@&limit=2&user=%@&format=json", self.appId, self.userName];
     NSURL *url = [NSURL URLWithString:urlString];
-    NSLog(@"Looking up last.fm URL: %@", url);
+//    NSLog(@"Looking up last.fm URL: %@", url);
 
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request startSynchronous];
