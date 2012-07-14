@@ -75,12 +75,9 @@
     else
     {
         // Error
-        NSString *errString = [NSString stringWithFormat:@"Error updating last.fm status: %@", [error localizedDescription]];
-        NSLog(@"%@", errString);
-
         // Create an empty song object to return the error string in. Essentially a null object.
         currentSong = [[FFMSong alloc] init];
-        currentSong.errorText = [NSString stringWithFormat:@"last.fm Error: %@", errString];
+        currentSong.errorText = [NSString stringWithFormat:@"last.fm Error: %@", [error localizedDescription]];
     }
 
     return currentSong;
