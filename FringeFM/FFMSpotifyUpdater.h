@@ -1,5 +1,5 @@
 //
-//  FFMSong.h
+//  FFMSpotifyUpdater.h
 //  FringeFM
 //
 //  Created by John Sheets on 6/10/12.
@@ -25,22 +25,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "FFMLocalSongUpdater.h"
 
-@interface FFMSong : NSObject
-
-@property (strong) id source;
-
-@property (assign) BOOL isPlaying;
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
-
-@property (strong) NSImage *albumImage;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSURL *artMediumUrl;
-@property (strong) NSURL *artLargeUrl;
-
-@property (strong) NSString *errorText;
+@interface FFMSpotifyUpdater : FFMLocalSongUpdater
 
 @end

@@ -35,10 +35,18 @@
 @synthesize album = _album;
 @synthesize track = _track;
 
+@synthesize albumImage = _albumImage;
 @synthesize artSmallUrl = _artSmallUrl;
 @synthesize artMediumUrl = _artMediumUrl;
 @synthesize artLargeUrl = _artLargeUrl;
 
-@synthesize error = _error;
+@synthesize errorText = _errorText;
+@synthesize source = _source;
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<FFMSong %@, %@, %@ (%@)>", self.track, self.artist, self.album,
+            self.isPlaying ? @"Playing" : @"Stopped"];
+}
 
 @end

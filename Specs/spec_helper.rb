@@ -48,8 +48,8 @@ else
   puts "Running tests with RubyCocoa."
 end
 
-SPECS_DIR = File.expand_path(File.dirname(__FILE__))
-DATA_DIR = File.join(SPECS_DIR, "data")
+SPECS_DIR = File.expand_path(File.dirname(__FILE__)) unless defined?(SPECS_DIR)
+DATA_DIR = File.join(SPECS_DIR, "data") unless defined?(DATA_DIR)
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

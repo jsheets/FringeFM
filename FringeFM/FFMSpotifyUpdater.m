@@ -1,5 +1,5 @@
 //
-//  FFMSong.h
+//  FFMSpotifyUpdater.m
 //  FringeFM
 //
 //  Created by John Sheets on 6/10/12.
@@ -25,22 +25,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "FFMSpotifyUpdater.h"
+#import "FFMSong.h"
+#import "Spotify.h"
 
-@interface FFMSong : NSObject
+@implementation FFMSpotifyUpdater
 
-@property (strong) id source;
+- (id)init
+{
+    return [super initWithAppId:@"com.spotify.client" appName:@"Spotify"];
+}
 
-@property (assign) BOOL isPlaying;
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
+- (BOOL)loadSong:(FFMSong *)currentSong
+{
+    SpotifyApplication *spotify = (SpotifyApplication *)self.localApp;
+    SpotifyTrack *track = spotify.currentTrack;
 
-@property (strong) NSImage *albumImage;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSURL *artMediumUrl;
-@property (strong) NSURL *artLargeUrl;
+    BOOL foundTrack = track.name != nil;
+    if (foundTrack)
+    {
+        currentSong.track = track.name;
+        currentSong.artist = track.artist;
+        currentSong.album = track.album;
 
-@property (strong) NSString *errorText;
+        if (track.artwork)
+        {
+            currentSong.albumImage = track.artwork;
+        }
+    }
+
+    return foundTrack;
+}
+
+- (BOOL)isServicePlaying
+{
+    SpotifyApplication *spotify = (SpotifyApplication *)self.localApp;
+    return spotify.playerState == SpotifyEPlSPlaying;
+}
 
 @end

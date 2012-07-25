@@ -25,8 +25,72 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import "FFMSong.h"
+#import "FFMLastFmJson.h"
 #import "FFMLastFMUpdater.h"
+#import "ASIHTTPRequest.h"
 
 @implementation FFMLastFMUpdater
+
+@synthesize userName = _userName;
+
+- (id)initWithUserName:(NSString *)userName apiKey:(NSString *)apiKey
+{
+    if ((self = [super initWithAppId:apiKey appName:@"Last.fm API"]))
+    {
+        // Initialization.
+        self.userName = userName;
+        self.updateFrequency = 15;
+    }
+
+    return self;
+}
+
+// Fetch the currently playing song from the last.fm web REST API. Synchronous?
+- (FFMSong *)fetchCurrentSong
+{
+    FFMSong *currentSong = nil;
+
+    NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=%@&limit=2&user=%@&format=json", self.appId, self.userName];
+    NSURL *url = [NSURL URLWithString:urlString];
+//    NSLog(@"Looking up last.fm URL: %@", url);
+
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request startSynchronous];
+
+    NSError *error = [request error];
+    if (error == nil)
+    {
+        // Success
+        // Completed the HTTP request from last.fm. Now load the JSON response into a FFMSong object.
+        NSString *responseString = [request responseString];
+//        NSLog(@"Received JSON: %@", responseString);
+
+        FFMLastFmJson *currentlyPlaying = [[FFMLastFmJson alloc] initWithJson:responseString];
+        currentSong = currentlyPlaying.song;
+
+        // Attach wrapper JSON object to the song in case we need it later (we will).
+        currentSong.source = currentlyPlaying;
+    }
+    else
+    {
+        // Error
+        // Create an empty song object to return the error string in. Essentially a null object.
+        currentSong = [[FFMSong alloc] init];
+        currentSong.errorText = [NSString stringWithFormat:@"last.fm Error: %@", [error localizedDescription]];
+    }
+
+    return currentSong;
+}
+
+- (BOOL)isServicePlaying
+{
+    return YES;
+}
+
+- (BOOL)isServiceRemote
+{
+    return YES;
+}
 
 @end

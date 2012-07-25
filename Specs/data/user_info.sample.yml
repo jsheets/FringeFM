@@ -1,0 +1,10 @@
+# Which last.fm account to connect to and which last.fm API key to use.
+last_fm:
+  api_key: "0123456789abcdef0123456789abcdef"
+  user: "mylastfmuser"
+
+# The name of the track to try playing in iTunes.app.
+itunes:
+  track_name: "Portrait (He Knew)"
+  artist: "Kansas"
+  album: "Point Of Know Return"

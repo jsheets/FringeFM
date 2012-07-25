@@ -1,8 +1,8 @@
 //
-//  FFMSong.h
+//  FFMLocalSongUpdater.h
 //  FringeFM
 //
-//  Created by John Sheets on 6/10/12.
+//  Created by John Sheets on 7/4/12.
 //  Copyright (c) 2012 John Sheets. All rights reserved.
 //
 // MIT License
@@ -25,22 +25,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "FFMSongUpdater.h"
+#import <ScriptingBridge/ScriptingBridge.h>
 
-@interface FFMSong : NSObject
+@interface FFMLocalSongUpdater : FFMSongUpdater
 
-@property (strong) id source;
+// Retrieve the ScriptingBridge app proxy for this local music player.
+- (SBApplication *)localApp;
 
-@property (assign) BOOL isPlaying;
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
-
-@property (strong) NSImage *albumImage;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSURL *artMediumUrl;
-@property (strong) NSURL *artLargeUrl;
-
-@property (strong) NSString *errorText;
+// Attempt to load track info for the currently playing song, if any.
+- (BOOL)loadSong:(FFMSong *)currentSong;
 
 @end

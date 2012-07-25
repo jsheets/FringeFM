@@ -1,5 +1,5 @@
 //
-//  FFMSong.h
+//  FFMMogUpdater.m
 //  FringeFM
 //
 //  Created by John Sheets on 6/10/12.
@@ -25,22 +25,40 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "FFMMogUpdater.h"
+#import "FFMSong.h"
+#import "Mog.h"
 
-@interface FFMSong : NSObject
+@implementation FFMMogUpdater
 
-@property (strong) id source;
+- (id)init
+{
+    return [super initWithAppId:@"com.mog.desktop" appName:@"Mog"];
+}
 
-@property (assign) BOOL isPlaying;
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
+- (BOOL)loadSong:(FFMSong *)currentSong
+{
+    MogApplication *mog = (MogApplication *)self.localApp;
+    BOOL foundTrack = mog.title != nil;
+    if (foundTrack)
+    {
+        currentSong.track = mog.title;
+        currentSong.artist = mog.artist;
+        currentSong.album = mog.album;
 
-@property (strong) NSImage *albumImage;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSURL *artMediumUrl;
-@property (strong) NSURL *artLargeUrl;
+        if (mog.artwork)
+        {
+            currentSong.albumImage = (NSImage *)mog.artwork;
+        }
+    }
 
-@property (strong) NSString *errorText;
+    return foundTrack;
+}
+
+- (BOOL)isServicePlaying
+{
+    MogApplication *mog = (MogApplication *)self.localApp;
+    return (mog.title != nil);
+}
 
 @end

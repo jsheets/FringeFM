@@ -1,5 +1,5 @@
 //
-//  FFMSong.h
+//  FFMSongUpdater.m
 //  FringeFM
 //
 //  Created by John Sheets on 6/10/12.
@@ -25,22 +25,51 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "FFMSongUpdater.h"
 
-@interface FFMSong : NSObject
+@implementation FFMSongUpdater
 
-@property (strong) id source;
+@synthesize icon = _icon;
+@synthesize updateFrequency = _updateFrequency;
+@synthesize appId = _appId;
+@synthesize appName = _appName;
 
-@property (assign) BOOL isPlaying;
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
+- (id)initWithAppId:(NSString *)appId appName:(NSString *)appName
+{
+    if ((self = [super init]))
+    {
+        // Initialization.
+        _appId = appId;
+        _appName = appName;
+        _updateFrequency = 5;
+    }
 
-@property (strong) NSImage *albumImage;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSURL *artMediumUrl;
-@property (strong) NSURL *artLargeUrl;
+    return self;
+}
 
-@property (strong) NSString *errorText;
+- (id)init
+{
+    return [self initWithAppId:nil appName:nil];
+}
+
+- (FFMSong *)fetchCurrentSong
+{
+    return nil;
+}
+
+- (BOOL)isServiceAvailable
+{
+    return NO;
+}
+
+- (BOOL)isServicePlaying
+{
+    return NO;
+}
+
+- (BOOL)isServiceRemote
+{
+    return NO;
+}
 
 @end

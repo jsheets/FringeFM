@@ -1,5 +1,5 @@
 //
-//  FFMSong.h
+//  FFMRdioUpdater.m
 //  FringeFM
 //
 //  Created by John Sheets on 6/10/12.
@@ -25,22 +25,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "FFMRdioUpdater.h"
+#import "FFMSong.h"
+#import "Rdio.h"
 
-@interface FFMSong : NSObject
+@implementation FFMRdioUpdater
 
-@property (strong) id source;
+- (id)init
+{
+    return [super initWithAppId:@"com.rdio.desktop" appName:@"Rdio"];
+}
 
-@property (assign) BOOL isPlaying;
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
+- (BOOL)loadSong:(FFMSong *)currentSong
+{
+    RdioApplication *rdio = (RdioApplication *)self.localApp;
+    RdioTrack *track = rdio.currentTrack;
 
-@property (strong) NSImage *albumImage;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSURL *artMediumUrl;
-@property (strong) NSURL *artLargeUrl;
+    BOOL foundTrack = track.name != nil;
+    if (foundTrack)
+    {
+        currentSong.track = track.name;
+        currentSong.artist = track.artist;
+        currentSong.album = track.album;
 
-@property (strong) NSString *errorText;
+        if (track.artwork)
+        {
+            currentSong.albumImage = (NSImage *)track.artwork;
+        }
+    }
+
+    return foundTrack;
+}
+
+- (BOOL)isServicePlaying
+{
+    RdioApplication *rdio = (RdioApplication *)self.localApp;
+    return rdio.playerState == RdioEPSSPlaying;
+}
 
 @end

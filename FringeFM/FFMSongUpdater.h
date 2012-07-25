@@ -1,5 +1,5 @@
 //
-//  FFMSong.h
+//  FFMSongUpdater.h
 //  FringeFM
 //
 //  Created by John Sheets on 6/10/12.
@@ -27,20 +27,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FFMSong : NSObject
+@class FFMSong;
 
-@property (strong) id source;
+@interface FFMSongUpdater : NSObject
 
-@property (assign) BOOL isPlaying;
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
+@property (nonatomic, strong) NSImage *icon;
+@property (nonatomic) NSUInteger updateFrequency;
+@property (strong) NSString *appId;
+@property (strong) NSString *appName;
 
-@property (strong) NSImage *albumImage;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSURL *artMediumUrl;
-@property (strong) NSURL *artLargeUrl;
+- (id)initWithAppId:(NSString *)appId appName:(NSString *)appName;
 
-@property (strong) NSString *errorText;
+- (FFMSong *)fetchCurrentSong;
+- (BOOL)isServiceAvailable;
+- (BOOL)isServicePlaying;
+- (BOOL)isServiceRemote;
 
 @end

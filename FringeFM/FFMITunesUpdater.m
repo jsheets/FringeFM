@@ -1,5 +1,5 @@
 //
-//  FFMSong.h
+//  FFMITunesUpdater.m
 //  FringeFM
 //
 //  Created by John Sheets on 6/10/12.
@@ -25,22 +25,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "FFMITunesUpdater.h"
+#import "FFMSong.h"
+#import "iTunes.h"
 
-@interface FFMSong : NSObject
+@implementation FFMITunesUpdater
 
-@property (strong) id source;
+- (id)init
+{
+    return [super initWithAppId:@"com.apple.iTunes" appName:@"iTunes"];
+}
 
-@property (assign) BOOL isPlaying;
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
+- (BOOL)loadSong:(FFMSong *)currentSong
+{
+    iTunesApplication *iTunes = (iTunesApplication *)self.localApp;
+    iTunesTrack *track = iTunes.currentTrack;
 
-@property (strong) NSImage *albumImage;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSURL *artMediumUrl;
-@property (strong) NSURL *artLargeUrl;
+    BOOL foundTrack = [track exists];
+    if (foundTrack)
+    {
+        currentSong.track = track.name;
+        currentSong.artist = track.artist;
+        currentSong.album = track.album;
+        currentSong.isPlaying = self.isServicePlaying;
 
-@property (strong) NSString *errorText;
+        iTunesArtwork *artwork = (iTunesArtwork *)[[[track artworks] get] lastObject];
+        if (artwork)
+        {
+            currentSong.albumImage = [[NSImage alloc] initWithData:[artwork rawData]];
+        }
+    }
+
+    return foundTrack;
+}
+
+- (BOOL)isServicePlaying
+{
+    iTunesApplication *iTunes = (iTunesApplication *)self.localApp;
+    return iTunes.playerState == iTunesEPlSPlaying;
+}
 
 @end

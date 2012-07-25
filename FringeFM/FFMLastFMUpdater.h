@@ -26,10 +26,15 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "FFMSongUpdater.h"
 
 /**
  * Downloader for last.fm user.getrecenttracks data; manages ASIHTTPRequest calls and last.fm API key.
  */
-@interface FFMLastFMUpdater : NSObject
+@interface FFMLastFMUpdater : FFMSongUpdater
+
+@property (strong) NSString *userName;
+
+- (id)initWithUserName:(NSString *)userName apiKey:(NSString *)apiKey;
 
 @end

@@ -1,5 +1,5 @@
 //
-//  FFMSong.h
+//  FFMLastFmAppUpdater.m
 //  FringeFM
 //
 //  Created by John Sheets on 6/10/12.
@@ -25,22 +25,40 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "FFMLastFmAppUpdater.h"
+#import "Last.fm.h"
+#import "FFMSong.h"
 
-@interface FFMSong : NSObject
+@implementation FFMLastFmAppUpdater
 
-@property (strong) id source;
+- (id)init
+{
+    return [super initWithAppId:@"fm.last.Last.fm" appName:@"Last.fm"];
+}
 
-@property (assign) BOOL isPlaying;
-@property (strong) NSString *artist;
-@property (strong) NSString *album;
-@property (strong) NSString *track;
+- (BOOL)loadSong:(FFMSong *)currentSong
+{
+    LastFmApplication *lastfm = (LastFmApplication *)self.localApp;
+    BOOL foundTrack = lastfm.trackTitle != nil;
+    if (foundTrack)
+    {
+        currentSong.track = lastfm.trackTitle;
+        currentSong.artist = lastfm.artist;
+        currentSong.album = lastfm.album;
+        if (lastfm.artwork)
+        {
+            currentSong.albumImage = [[NSImage alloc] initWithData:lastfm.artwork];
+        }
+    }
 
-@property (strong) NSImage *albumImage;
-@property (strong) NSURL *artSmallUrl;
-@property (strong) NSURL *artMediumUrl;
-@property (strong) NSURL *artLargeUrl;
+    return foundTrack;
+}
 
-@property (strong) NSString *errorText;
+- (BOOL)isServicePlaying
+{
+    // No way to get this via AppleScript.
+    LastFmApplication *lastfm = (LastFmApplication *)self.localApp;
+    return (lastfm.trackTitle != nil);
+}
 
 @end
