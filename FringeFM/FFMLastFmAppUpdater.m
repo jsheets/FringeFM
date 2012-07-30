@@ -47,7 +47,7 @@
         currentSong.album = lastfm.album;
         if (lastfm.artwork)
         {
-            currentSong.albumImage = [[NSImage alloc] initWithData:lastfm.artwork];
+            currentSong.albumImage = (NSImage *)lastfm.artwork;
         }
     }
 
