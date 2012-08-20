@@ -34,6 +34,8 @@
 @interface FFMLastFMUpdater : FFMSongUpdater
 
 @property (strong) NSString *userName;
+@property (strong) FFMSong *lastSong;
+@property (strong) NSDate *lastChecked;
 
 - (id)initWithUserName:(NSString *)userName apiKey:(NSString *)apiKey;
 

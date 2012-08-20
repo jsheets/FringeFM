@@ -33,6 +33,8 @@
 @implementation FFMLastFMUpdater
 
 @synthesize userName = _userName;
+@synthesize lastSong = _lastSong;
+@synthesize lastChecked = _lastChecked;
 
 - (id)initWithUserName:(NSString *)userName apiKey:(NSString *)apiKey
 {
@@ -50,6 +52,14 @@
 - (FFMSong *)fetchCurrentSong
 {
     FFMSong *currentSong = nil;
+
+    NSTimeInterval secondsSinceLastCheck = -[self.lastChecked timeIntervalSinceNow];
+    BOOL needsUpdate = secondsSinceLastCheck > (self.updateFrequency * 0.9);
+//    NSLog(@"Time since last checked: %.2f", secondsSinceLastCheck);
+    if (self.lastSong && !needsUpdate)
+    {
+        return self.lastSong;
+    }
 
     NSString *urlString = [NSString stringWithFormat:@"http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&api_key=%@&limit=2&user=%@&format=json", self.appId, self.userName];
     NSURL *url = [NSURL URLWithString:urlString];
@@ -79,6 +89,9 @@
         currentSong = [[FFMSong alloc] init];
         currentSong.errorText = [NSString stringWithFormat:@"last.fm Error: %@", [error localizedDescription]];
     }
+
+    self.lastSong = currentSong;
+    self.lastChecked = [NSDate date];
 
     return currentSong;
 }
