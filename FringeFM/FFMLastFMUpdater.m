@@ -98,7 +98,8 @@
 
 - (BOOL)isServicePlaying
 {
-    return YES;
+    // Ask the last.fm service if we're playing.
+    return [self fetchCurrentSong].isPlaying;
 }
 
 - (BOOL)isServiceRemote
